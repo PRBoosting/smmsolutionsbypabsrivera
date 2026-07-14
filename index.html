@@ -96,6 +96,7 @@
     <dialog class="utility-modal" id="order-lookup"><button class="close-utility" aria-label="Close order tracking">×</button><p class="eyebrow">ORDER TRACKING</p><h2>Check your order status.</h2><p>Enter your Order ID and we’ll open a Messenger message for SMM Solutions. For privacy, status details are confirmed directly with the account owner.</p><form class="lookup-form"><label>Order ID <input name="order-id" placeholder="Example: SMM-20260713-0001" required /></label><button class="button button-primary" type="submit">Check via Messenger <span>→</span></button></form></dialog>
     <dialog class="utility-modal" id="referral"><button class="close-utility" aria-label="Close referral form">×</button><p class="eyebrow">REFER A FRIEND</p><h2>Share SMM Solutions.</h2><p>Send us your name and your friend’s name through Messenger. We’ll confirm any available referral bonus with you.</p><form class="referral-form"><label>Your name <input name="referrer" required /></label><label>Friend’s name <input name="friend" required /></label><button class="button button-primary" type="submit">Send referral <span>→</span></button></form></dialog>
     <dialog class="utility-modal qr-modal" id="qr-maker"><button class="close-utility" aria-label="Close QR code maker">×</button><p class="eyebrow">FREE QR CODE MAKER</p><h2>Make a branded QR code.</h2><p>Everything is made in your browser. Your link and image are never uploaded. Keep the centre image small so the QR remains easy to scan.</p><div class="qr-maker-layout"><form class="qr-form"><label>Link or text <textarea name="qr-text" rows="3">https://www.facebook.com/smmsolutionsv2/</textarea></label><div class="color-row"><label>QR color <input name="dark-color" type="color" value="#071f4d" /></label><label>Background <input name="light-color" type="color" value="#ffffff" /></label></div><label>Built-in character <select name="qr-character"><option value="">No character</option><option value="★">Star</option><option value="♥">Heart</option><option value="✦">Sparkle</option><option value="☺">Smile</option><option value="♛">Crown</option></select></label><label>Add your photo or character <input name="qr-logo" type="file" accept="image/*" /></label><button class="button button-primary" type="submit">Create QR code <span>→</span></button></form><div class="qr-preview"><div id="qr-output" aria-label="QR code preview"></div><button class="download-qr" type="button" disabled>Download PNG</button></div></div></dialog>
+    <dialog class="utility-modal link-fixer-modal" id="link-fixer"><button class="close-utility" aria-label="Close link fixer">×</button><p class="eyebrow">FREE LINK FIXER</p><h2>Clean or shorten your link.</h2><p>Paste a public Facebook, Instagram, TikTok, YouTube, or website link. Cleaning happens in your browser. Shortening sends only the link you choose to the free shortening service.</p><form class="link-fixer-form" id="link-fixer-form"><label>Your link <input name="link" type="text" autocomplete="url" placeholder="Paste your profile, post, or video link" required /></label><button class="button button-primary" type="submit">Fix my link <span>→</span></button></form><div class="link-fixer-result" id="link-fixer-result" hidden><p class="link-status" id="link-status"></p><label>Clean link <input class="clean-link" id="clean-link" type="text" readonly /></label><button class="copy-clean-link" id="copy-clean-link" type="button">Copy clean link</button><button class="shorten-clean-link" id="shorten-clean-link" type="button">Shorten this link for free</button><div class="short-link-result" id="short-link-result" hidden><label>Short link <input class="short-link" id="short-link" type="text" readonly /></label><button class="copy-short-link" id="copy-short-link" type="button">Copy short link</button></div><p class="link-note" id="link-note"></p></div></dialog>
     <a class="messenger-float" href="https://m.me/smmsolutionsv2" target="_blank" rel="noreferrer" aria-label="Message SMM Solutions on Facebook Messenger">M<span>Message us</span></a>
     <a class="mobile-order" href="https://docs.google.com/forms/d/e/1FAIpQLScyaMF0jMytzyNUKlN-bSIbnXONpPikQS47NKEXNJ58gSCv9g/viewform?usp=publish-editor" target="_blank" rel="noreferrer">Order now <span>→</span></a>
     <style>.chat-launcher{position:fixed;right:24px;bottom:24px;z-index:4;border:0;background:#071f4d;color:#fff;border-radius:100px;padding:13px 18px 13px 13px;display:flex;align-items:center;gap:9px;box-shadow:0 12px 28px #071f4d50;cursor:pointer;font:700 13px "DM Sans",sans-serif}.chat-launcher span,.chat-avatar{background:#2389ff;border-radius:50%;display:grid;place-items:center;width:30px;height:30px;font-size:18px}.chat-launcher em{font-style:normal}.chat-widget{position:fixed;z-index:5;right:24px;bottom:86px;width:min(370px,calc(100vw - 32px));background:#fff;border-radius:17px;box-shadow:0 22px 60px #071f4d42;overflow:hidden;opacity:0;transform:translateY(14px) scale(.97);pointer-events:none;transition:.2s}.chat-widget.open{opacity:1;transform:none;pointer-events:auto}.chat-widget header{background:#071f4d;color:#fff;padding:18px;display:flex;justify-content:space-between;align-items:center}.chat-widget header>div{display:flex;align-items:center;gap:10px}.chat-widget header b{font:700 14px "Plus Jakarta Sans",sans-serif;display:block}.chat-widget header small{font-size:11px;color:#bad6ff}.chat-close{border:0;background:transparent;color:#fff;font-size:25px;cursor:pointer}.chat-messages{height:220px;overflow-y:auto;padding:17px;background:#f6f9ff;display:flex;flex-direction:column;gap:10px}.message{max-width:85%;padding:11px 13px;border-radius:13px;font-size:13px;line-height:1.45}.message.bot{background:#e4f0ff;color:#18376d;border-bottom-left-radius:3px}.message.user{align-self:end;background:#146fe0;color:#fff;border-bottom-right-radius:3px}.quick-replies{padding:10px 14px;display:flex;gap:7px;overflow-x:auto}.quick-replies button{white-space:nowrap;border:1px solid #c8dcf7;color:#1169d5;background:#fff;padding:7px 9px;border-radius:100px;font:600 11px "DM Sans",sans-serif;cursor:pointer}.chat-form{padding:11px 13px;border-top:1px solid #e4ebf5;display:flex;gap:8px}.chat-form input{border:0;outline:0;flex:1;font:13px "DM Sans",sans-serif}.chat-form button{width:31px;height:31px;border:0;border-radius:50%;background:#146fe0;color:#fff;font-size:18px;cursor:pointer}@media(max-width:760px){.chat-launcher{right:16px;bottom:16px}.chat-widget{right:16px;bottom:78px}}</style>
@@ -103,7 +104,54 @@
     <script src="calculator.js"></script>
     <script src="script.js"></script>
     <script src="extras.js"></script>
-    <script src="link-fixer.js"></script>
+    <script>
+      (() => {
+        const dialog = document.querySelector('#link-fixer');
+        const form = document.querySelector('#link-fixer-form');
+        const resultBox = document.querySelector('#link-fixer-result');
+        const output = document.querySelector('#clean-link');
+        const status = document.querySelector('#link-status');
+        const note = document.querySelector('#link-note');
+        const shortResult = document.querySelector('#short-link-result');
+        const shortLink = document.querySelector('#short-link');
+        const shortenButton = document.querySelector('#shorten-clean-link');
+        document.querySelectorAll('[data-dialog="link-fixer"]').forEach(button => button.addEventListener('click', () => { if (!dialog.open) dialog.showModal(); }));
+        dialog.querySelector('.close-utility').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+        const copy = async (field, button, label) => { try { await navigator.clipboard.writeText(field.value); } catch { field.select(); document.execCommand('copy'); } button.textContent = 'Copied!'; setTimeout(() => button.textContent = label, 1800); };
+        const fix = value => {
+          let text = value.trim().replace(/[“”"']/g, '').replace(/\s+/g, '');
+          if (!text) throw new Error('Please paste a link first.');
+          if (!/^[a-z][a-z\d+.-]*:\/\//i.test(text)) text = `https://${text}`;
+          const url = new URL(text);
+          if (!['http:', 'https:'].includes(url.protocol)) throw new Error('Please use a regular website or social-media link.');
+          const aliases = { 'm.facebook.com': 'www.facebook.com', 'web.facebook.com': 'www.facebook.com', 'fb.com': 'www.facebook.com', 'm.instagram.com': 'www.instagram.com', 'm.tiktok.com': 'www.tiktok.com' };
+          url.hostname = aliases[url.hostname.toLowerCase()] || url.hostname.toLowerCase();
+          [...url.searchParams.keys()].forEach(key => { if (/^(utm_|fbclid$|gclid$|igsh|igshid|si$|mibextid$|ref$|source$)/i.test(key)) url.searchParams.delete(key); });
+          const platform = url.hostname.includes('facebook.com') ? 'Facebook' : url.hostname.includes('instagram.com') ? 'Instagram' : url.hostname.includes('tiktok.com') ? 'TikTok' : url.hostname.includes('youtube.com') ? 'YouTube' : 'Website';
+          return { link: url.toString(), platform, share: url.hostname.includes('facebook.com') && /^\/share/i.test(url.pathname) };
+        };
+        const shorten = url => new Promise((resolve, reject) => {
+          const callback = `isgd_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+          const script = document.createElement('script');
+          const timeout = setTimeout(() => finish(new Error('The shortening service took too long. Please try again.')), 12000);
+          function finish(error, data) { clearTimeout(timeout); delete window[callback]; script.remove(); error ? reject(error) : resolve(data); }
+          window[callback] = data => data?.shorturl ? finish(null, data.shorturl) : finish(new Error(data?.errormessage || 'The shortening service could not create a link.'));
+          script.src = `https://is.gd/create.php?format=json&callback=${callback}&url=${encodeURIComponent(url)}`;
+          script.onerror = () => finish(new Error('The shortening service is unavailable right now.'));
+          document.head.append(script);
+        });
+        form.addEventListener('submit', event => {
+          event.preventDefault(); shortResult.hidden = true; shortLink.value = '';
+          try { const fixed = fix(form.elements.link.value); output.value = fixed.link; status.textContent = `${fixed.platform} link cleaned and ready to copy.`; note.textContent = fixed.share ? 'This looks like a Facebook share link. For boosting, use the direct profile, page, post, or video link whenever possible.' : 'Check that this opens the exact profile, post, account, or video you want to use before ordering.'; }
+          catch (error) { output.value = ''; status.textContent = error.message; note.textContent = 'Try copying the full link again from the social-media app or browser.'; }
+          resultBox.hidden = false;
+        });
+        document.querySelector('#copy-clean-link').addEventListener('click', () => output.value && copy(output, document.querySelector('#copy-clean-link'), 'Copy clean link'));
+        shortenButton.addEventListener('click', async () => { if (!output.value) return; shortenButton.disabled = true; shortenButton.textContent = 'Creating short link…'; try { shortLink.value = await shorten(output.value); shortResult.hidden = false; } catch (error) { note.textContent = error.message; } finally { shortenButton.disabled = false; shortenButton.textContent = 'Shorten this link for free'; } });
+        document.querySelector('#copy-short-link').addEventListener('click', () => shortLink.value && copy(shortLink, document.querySelector('#copy-short-link'), 'Copy short link'));
+      })();
+    </script>
     <script src="qr.js"></script>
   </body>
 </html>
