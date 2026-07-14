@@ -11,38 +11,63 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="marketplace.css" />
     <link rel="stylesheet" href="marketplace-types.css" />
+    <link rel="stylesheet" href="marketplace-auth.css" />
   </head>
   <body>
     <header class="site-header marketplace-header">
       <a class="brand" href="index.html" aria-label="SMM Solutions home"><span class="brand-mark">↗</span><span>SMM <b>Solutions</b><small>by Pabs Rivera</small></span></a>
-      <a class="back-link" href="index.html">← Back to services</a>
+      <div class="marketplace-account">
+        <button id="sign-in-button" class="sign-in-button" type="button">Sign in to post</button>
+        <div id="account-menu" class="account-menu" hidden><span id="account-name"></span><button id="sign-out-button" type="button">Sign out</button></div>
+        <a class="back-link" href="index.html">← Back to services</a>
+      </div>
     </header>
 
     <main>
       <section class="marketplace-hero">
         <p class="eyebrow">SMM SOLUTIONS COMMUNITY</p>
         <h1>Buy, sell, hire,<br /><span>or find what you need.</span></h1>
-        <p>Browse community listings that were reviewed before being published. Post items for sale, services for hire, or requests for what you are looking for.</p>
-        <div class="marketplace-actions"><a class="button button-primary listing-form-link" href="#post-listing">Post a listing <span>→</span></a><a class="button button-quiet" href="#listings">Browse listings</a></div>
+        <p>Browse community listings that were reviewed before being published. Sign in with Google to post an item, offer a service, or ask for what you need.</p>
+        <div class="marketplace-actions"><a class="button button-primary open-post-form" href="#post-listing">Post a listing <span>→</span></a><a class="button button-quiet" href="#listings">Browse listings</a></div>
         <p class="marketplace-note">Listings are community posts. SMM Solutions does not handle payments, delivery, or disputes.</p>
       </section>
 
       <section class="marketplace-controls" id="listings" aria-label="Browse listings">
         <div><p class="eyebrow">APPROVED LISTINGS</p><h2>Find something useful.</h2></div>
         <label class="search-box">Search listings <input id="listing-search" type="search" placeholder="Try “phone” or “services”" /></label>
-        <label class="category-select">Listing type <select id="listing-type"><option value="all">All listing types</option><option>Buy & Sell</option><option>For Hire</option><option>Looking For</option></select></label>
-        <label class="category-select">Category <select id="listing-category"><option value="all">All categories</option><option>Electronics</option><option>Fashion</option><option>Home & Living</option><option>Services</option><option>Collectibles</option><option>Other</option></select></label>
+        <label class="category-select">Listing type <select id="listing-type"><option value="all">All listing types</option><option>Buy &amp; Sell</option><option>For Hire</option><option>Looking For</option></select></label>
+        <label class="category-select">Category <select id="listing-category"><option value="all">All categories</option><option>Electronics</option><option>Fashion</option><option>Home &amp; Living</option><option>Services</option><option>Collectibles</option><option>Other</option></select></label>
       </section>
 
       <section class="listing-grid" id="listing-grid" aria-live="polite"><div class="listing-empty"><b>Loading approved listings…</b><span>Please wait a moment.</span></div></section>
 
       <section class="marketplace-rules" id="post-listing">
-        <div><p class="eyebrow">POST A LISTING</p><h2>Post responsibly.</h2><p>Submit an item for sale, your service for hire, or a request for what you need. Once approved, it can appear here with the contact link you provide.</p><a class="button button-primary listing-form-link" href="#">Post a listing <span>→</span></a></div>
+        <div><p class="eyebrow">POST A LISTING</p><h2>Post responsibly.</h2><p>Submit an item for sale, your service for hire, or a request for what you need. Your post is reviewed first, then appears here with the contact link you provide.</p><a class="button button-primary open-post-form" href="#">Post a listing <span>→</span></a></div>
         <ul><li>Only post legal items and honest descriptions.</li><li>Do not post prohibited, unsafe, counterfeit, or misleading items.</li><li>Use safe meet-ups and verify details before sending payment.</li><li>SMM Solutions may decline or remove any listing.</li></ul>
       </section>
     </main>
 
+    <div class="listing-modal" id="post-listing-modal" hidden role="dialog" aria-modal="true" aria-labelledby="listing-modal-title">
+      <div class="listing-modal-card">
+        <button class="modal-close" id="close-listing-modal" type="button" aria-label="Close">×</button>
+        <p class="eyebrow">COMMUNITY LISTING</p>
+        <h2 id="listing-modal-title">Post for review</h2>
+        <p class="modal-copy">Your listing is private until SMM Solutions approves it. Never include passwords, bank details, or sensitive information.</p>
+        <form id="firebase-listing-form" class="listing-form">
+          <label>Listing type<select name="type" required><option>Buy &amp; Sell</option><option>For Hire</option><option>Looking For</option></select></label>
+          <label>Title<input id="listing-title" name="title" maxlength="80" required placeholder="Example: Pre-loved iPhone 13" /></label>
+          <div class="form-pair"><label>Category<select name="category" required><option>Electronics</option><option>Fashion</option><option>Home &amp; Living</option><option>Services</option><option>Collectibles</option><option>Other</option></select></label><label>Price (₱)<input name="price" type="number" min="0" placeholder="Optional" /></label></div>
+          <div class="form-pair"><label>Condition<select name="condition"><option>Not applicable</option><option>Brand new</option><option>Like new</option><option>Used</option></select></label><label>Location<input name="location" maxlength="80" required placeholder="City or area" /></label></div>
+          <label>Description<textarea name="description" maxlength="700" required placeholder="Give buyers or clients the important details."></textarea></label>
+          <label>Messenger or Facebook contact link<input name="contact" type="url" required placeholder="https://www.facebook.com/..." /></label>
+          <label>Public photo link <small>(optional)</small><input name="image" type="url" placeholder="https://..." /></label>
+          <button class="button button-primary" type="submit">Send for review <span>→</span></button>
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
     <footer><a class="brand" href="index.html"><span class="brand-mark">↗</span><span>SMM <b>Solutions</b><small>by Pabs Rivera</small></span></a><p>© <span id="year"></span> SMM Solutions by Pabs Rivera</p><a href="https://www.facebook.com/smmsolutionsv2/" target="_blank" rel="noreferrer">Facebook ↗</a></footer>
-    <script src="marketplace.js"></script>
+    <script type="module" src="marketplace-firebase.js"></script>
   </body>
 </html>

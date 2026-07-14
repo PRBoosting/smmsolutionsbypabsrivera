@@ -1,0 +1,26 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /marketplaceListings/{listingId} {
+      // Everyone may browse listings you have approved. A signed-in poster may
+      // also see their own pending post.
+      allow read: if resource.data.status == 'approved'
+                  || (request.auth != null && request.auth.uid == resource.data.ownerUid);
+
+      // A client may only create their own pending listing. They cannot make a
+      // post public, edit a listing, or impersonate another account.
+      allow create: if request.auth != null
+                    && request.resource.data.ownerUid == request.auth.uid
+                    && request.resource.data.status == 'pending'
+                    && request.resource.data.keys().hasOnly([
+                      'ownerUid', 'ownerName', 'ownerEmail', 'contact', 'type',
+                      'title', 'category', 'price', 'condition', 'description',
+                      'location', 'image', 'status', 'createdAt'
+                    ]);
+
+      // Approve, edit, or remove listings from the Firebase Console only.
+      allow update, delete: if false;
+    }
+  }
+}

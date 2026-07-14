@@ -1,5 +1,5 @@
 const MARKETPLACE_ENDPOINT='';
-const LISTING_FORM_URL='';
+const LISTING_FORM_URL='https://forms.gle/vos9rTVrsyhHGQoR7';
 const grid=document.querySelector('#listing-grid'),search=document.querySelector('#listing-search'),category=document.querySelector('#listing-category'),listingType=document.querySelector('#listing-type');
 let listings=[];
 const money=value=>new Intl.NumberFormat('en-PH',{style:'currency',currency:'PHP',maximumFractionDigits:0}).format(Number(value)||0);
