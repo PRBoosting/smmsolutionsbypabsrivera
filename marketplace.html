@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Approved Buy & Sell listings from the SMM Solutions community." />
-    <title>Buy & Sell | SMM Solutions by Pabs Rivera</title>
+    <meta name="description" content="Approved Buy, Sell, For Hire, and Looking For listings from the SMM Solutions community." />
+    <title>Community Listings | SMM Solutions by Pabs Rivera</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="marketplace.css" />
+    <link rel="stylesheet" href="marketplace-types.css" />
   </head>
   <body>
     <header class="site-header marketplace-header">
@@ -20,8 +21,8 @@
     <main>
       <section class="marketplace-hero">
         <p class="eyebrow">SMM SOLUTIONS COMMUNITY</p>
-        <h1>Buy & Sell,<br /><span>with approval first.</span></h1>
-        <p>Browse community listings that were reviewed before being published. Interested buyers contact sellers directly through the contact link provided.</p>
+        <h1>Buy, sell, hire,<br /><span>or find what you need.</span></h1>
+        <p>Browse community listings that were reviewed before being published. Post items for sale, services for hire, or requests for what you are looking for.</p>
         <div class="marketplace-actions"><a class="button button-primary listing-form-link" href="#post-listing">Post a listing <span>→</span></a><a class="button button-quiet" href="#listings">Browse listings</a></div>
         <p class="marketplace-note">Listings are community posts. SMM Solutions does not handle payments, delivery, or disputes.</p>
       </section>
@@ -29,13 +30,14 @@
       <section class="marketplace-controls" id="listings" aria-label="Browse listings">
         <div><p class="eyebrow">APPROVED LISTINGS</p><h2>Find something useful.</h2></div>
         <label class="search-box">Search listings <input id="listing-search" type="search" placeholder="Try “phone” or “services”" /></label>
+        <label class="category-select">Listing type <select id="listing-type"><option value="all">All listing types</option><option>Buy & Sell</option><option>For Hire</option><option>Looking For</option></select></label>
         <label class="category-select">Category <select id="listing-category"><option value="all">All categories</option><option>Electronics</option><option>Fashion</option><option>Home & Living</option><option>Services</option><option>Collectibles</option><option>Other</option></select></label>
       </section>
 
       <section class="listing-grid" id="listing-grid" aria-live="polite"><div class="listing-empty"><b>Loading approved listings…</b><span>Please wait a moment.</span></div></section>
 
       <section class="marketplace-rules" id="post-listing">
-        <div><p class="eyebrow">POST A LISTING</p><h2>Sell responsibly.</h2><p>Submit your item for review. Once approved, it can appear here with the contact link you provide.</p><a class="button button-primary listing-form-link" href="#">Post a listing <span>→</span></a></div>
+        <div><p class="eyebrow">POST A LISTING</p><h2>Post responsibly.</h2><p>Submit an item for sale, your service for hire, or a request for what you need. Once approved, it can appear here with the contact link you provide.</p><a class="button button-primary listing-form-link" href="#">Post a listing <span>→</span></a></div>
         <ul><li>Only post legal items and honest descriptions.</li><li>Do not post prohibited, unsafe, counterfeit, or misleading items.</li><li>Use safe meet-ups and verify details before sending payment.</li><li>SMM Solutions may decline or remove any listing.</li></ul>
       </section>
     </main>
