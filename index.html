@@ -164,7 +164,7 @@
 
         const card = document.createElement('article');
         card.className = 'new-feature-card link-card-feature';
-        card.innerHTML = '<div class="feature-topline"><span class="feature-label">NEW FEATURE</span><span class="feature-symbol">▣</span></div><h3>Free Link Card Maker</h3><p>Turn a link into a polished sharing card. Add your image, title, and description, then download it as a ready-to-post graphic.</p><button class="feature-button" type="button">Create a card <b>→</b></button>';
+ card.innerHTML = '<div class="feature-topline"><span class="feature-label">NEW FEATURE</span><span class="feature-symbol">▣</span></div><h3>Shareable Link Card Maker</h3><p>Create a secure shareable card with an image, social preview, destination link, and tracked clicks.</p><button class="feature-button" type="button">Create a card <b>→</b></button>';
         grid.append(card);
 
         const dialog = document.createElement('dialog');
@@ -188,7 +188,7 @@
           wrap(description, 600, 335, 500, 32, '400 25px Arial', '#c6dafa', 3);
           ctx.fillStyle = '#ffffff'; ctx.fillRect(600, 520, 350, 58); ctx.fillStyle = '#0c4f9e'; ctx.font = '700 23px Arial'; ctx.fillText(host, 625, 558);
         };
-        card.querySelector('button').addEventListener('click', () => { window.location.href = 'card-maker.html'; });
+ card.querySelector('button').addEventListener('click', () => { window.location.href = 'https://smm-marketplace-3a2a8.web.app/card-maker'; });
         dialog.querySelector('.close-utility').addEventListener('click', () => dialog.close());
         dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
         form.elements.image.addEventListener('change', event => { const file = event.target.files[0]; if (!file) { image = null; draw(); return; } const reader = new FileReader(); reader.onload = () => { image = new Image(); image.onload = draw; image.src = reader.result; }; reader.readAsDataURL(file); });
