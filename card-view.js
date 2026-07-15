@@ -1,0 +1,10 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
+import { doc, getDoc, getFirestore, increment, serverTimestamp, updateDoc } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
+import { firebaseConfig } from './firebase-config.js';
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const shell = document.querySelector('#shared-card-shell');
+const id = new URLSearchParams(window.location.search).get('id');
+if (!id) shell.innerHTML = '<div class="shared-card-error">This shared card link is incomplete.</div>';
+else { try { const reference = doc(db, 'shareCards', id); const snapshot = await getDoc(reference); if (!snapshot.exists()) shell.innerHTML = '<div class="shared-card-error">This card was not found or is no longer available.</div>'; else { const card = snapshot.data(); document.title = `${card.title} | Shared Link Card`; const article = document.createElement('article'); article.className = 'shared-card'; const image = document.createElement('img'); image.src = card.imageData; image.alt = card.title; const content = document.createElement('div'); content.className = 'shared-card-content'; const label = document.createElement('p'); label.className = 'eyebrow'; label.textContent = 'SHARED LINK CARD'; const title = document.createElement('h1'); title.textContent = card.title; const description = document.createElement('p'); description.textContent = card.description || 'Open this link to learn more.'; const open = document.createElement('a'); open.className = 'button button-primary'; open.href = card.destination; open.textContent = 'Open link →'; open.addEventListener('click', () => updateDoc(reference, { clicks: increment(1), lastClickAt: serverTimestamp() }).catch(() => {})); content.append(label, title, description, open); article.append(image, content); shell.replaceChildren(article); } } catch { shell.innerHTML = '<div class="shared-card-error">This card could not be loaded right now.</div>'; } }
