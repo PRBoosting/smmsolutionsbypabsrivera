@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Apply for the verified VIP Reseller Program of SMM Solutions by Pabs Rivera." />
+    <title>VIP Resellers | SMM Solutions by Pabs Rivera</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="vip-reseller.css" />
+  </head>
+  <body>
+    <header class="site-header vip-header">
+      <a class="brand" href="index.html" aria-label="SMM Solutions home"><span class="brand-mark">↗</span><span>SMM <b>Solutions</b><small>by Pabs Rivera</small></span></a>
+      <div class="vip-account"><a class="back-link" href="index.html">← Back to services</a><button id="vip-sign-in" class="vip-sign-in" type="button">Sign in to apply</button><div id="vip-account-menu" class="vip-account-menu" hidden><span id="vip-account-name"></span><button id="vip-sign-out" type="button">Sign out</button></div></div>
+    </header>
+    <main>
+      <section class="vip-hero">
+        <div><p class="eyebrow">SMM SOLUTIONS PARTNER PROGRAM</p><h1>Built for sellers<br /><span>who grow with us.</span></h1><p>Apply for verified reseller access. Real partners earn better rates through completed, clean orders—not just a sign-up.</p><div class="vip-hero-points"><span>✓ Protected member access</span><span>✓ Trial before VIP rates</span><span>✓ Manual verification</span></div></div>
+        <aside class="vip-roadmap"><p>YOUR PARTNER PATH</p><ol><li><b>01</b><span><strong>Apply</strong>Tell us about your selling page and plans.</span></li><li><b>02</b><span><strong>Trial</strong>Complete paid orders with a clean record.</span></li><li><b>03</b><span><strong>VIP</strong>Unlock reseller-only access after approval.</span></li></ol></aside>
+      </section>
+
+      <section class="vip-main">
+        <div class="vip-copy"><p class="eyebrow">VERIFIED PARTNERS ONLY</p><h2>Reseller rates are earned.</h2><p>To protect genuine resellers, every application is reviewed. Trial partners qualify for VIP after at least three successful paid orders, 30 days of clean activity, and the required order volume.</p><ul><li>One Google account per reseller</li><li>No passwords are ever needed</li><li>Account sharing, fake proof, or unpaid balances may lead to suspension</li></ul><a href="reseller-admin.html" class="admin-link">Partner admin sign-in →</a></div>
+        <div class="vip-panel">
+          <div id="vip-signed-out">
+            <p class="panel-label">START HERE</p><h2>Apply to become a reseller</h2><p>Sign in with Google first. Your application stays private while it is reviewed.</p><button id="vip-sign-in-panel" class="button button-primary" type="button">Sign in to apply <span>→</span></button>
+          </div>
+          <div id="vip-member" hidden>
+            <p class="panel-label">YOUR RESELLER STATUS</p><h2 id="vip-status-title">Checking your access…</h2><p id="vip-status-copy">Please wait a moment.</p>
+            <div id="vip-status-badge" class="vip-status-badge">Checking</div>
+            <div id="vip-benefits" class="vip-benefits" hidden><b>VIP access is active</b><span>Your reseller status is protected by your signed-in account. Request the latest VIP rate list from SMM Solutions.</span></div>
+            <button id="open-application" class="button button-primary" type="button">Apply now <span>→</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="vip-rules"><p class="eyebrow">FAIR PARTNER POLICY</p><h2>Simple rules that protect everyone.</h2><div><article><b>Real activity</b><span>VIP access is based on successful paid orders and a clean record.</span></article><article><b>One account</b><span>Your partner account is personal. Do not share sign-in access.</span></article><article><b>Stay active</b><span>Inactive or problematic accounts can be returned to trial status.</span></article></div></section>
+    </main>
+
+    <div id="application-modal" class="vip-modal" hidden role="dialog" aria-modal="true" aria-labelledby="application-title"><div class="vip-modal-card"><button id="close-application" class="vip-close" type="button" aria-label="Close">×</button><p class="eyebrow">VIP RESELLER APPLICATION</p><h2 id="application-title">Tell us about your business.</h2><p>Only apply if you intend to sell services to real clients. We do not need your passwords or banking login.</p><form id="reseller-application-form" class="vip-form"><label>Business or seller name<input name="businessName" maxlength="80" required placeholder="Your shop or reseller name" /></label><label>Facebook page, shop, or selling profile link<input name="sellingPage" type="url" required placeholder="https://www.facebook.com/..." /></label><div class="vip-form-pair"><label>Mobile number<input name="phone" maxlength="30" required placeholder="09…" /></label><label>Main service<select name="serviceFocus" required><option value="Facebook">Facebook</option><option value="Instagram">Instagram</option><option value="TikTok">TikTok</option><option value="Mixed services">Mixed services</option></select></label></div><label>Expected monthly order volume<select name="monthlyVolume" required><option value="Below ₱1,500">Below ₱1,500</option><option value="₱1,500–₱2,999">₱1,500–₱2,999</option><option value="₱3,000–₱5,999">₱3,000–₱5,999</option><option value="₱6,000+">₱6,000+</option></select></label><label class="vip-check"><input name="agreement" type="checkbox" required /><span>I confirm that my details are honest, I will not share VIP access, and I accept that approval can be removed for misuse.</span></label><button class="button button-primary" type="submit">Send application <span>→</span></button><p id="application-message" class="vip-message" aria-live="polite"></p></form></div></div>
+    <footer><a class="brand" href="index.html"><span class="brand-mark">↗</span><span>SMM <b>Solutions</b><small>by Pabs Rivera</small></span></a><p>© <span id="year"></span> SMM Solutions by Pabs Rivera</p><a href="https://www.facebook.com/smmsolutionsv2/" target="_blank" rel="noreferrer">Facebook ↗</a></footer>
+    <script type="module" src="vip-reseller.js"></script>
+  </body>
+</html>

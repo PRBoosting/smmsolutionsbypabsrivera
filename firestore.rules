@@ -22,5 +22,51 @@ service cloud.firestore {
       // Approve, edit, or remove listings from the Firebase Console only.
       allow update, delete: if false;
     }
+
+    match /shareCards/{cardId} {
+      // A shared card needs to be readable by anyone who receives its link.
+      // Listing all cards is deliberately blocked.
+      allow get: if true;
+      allow list: if false;
+
+      // The protected server flow creates cards and counts clicks. This blocks
+      // visitors from bypassing free-card and token limits.
+      allow create, update: if false;
+      allow delete: if false;
+    }
+
+    match /cardUsers/{userId} {
+      // Users can read their own balance. Only an administrator can add tokens
+      // in the Firebase Console after a payment is verified.
+      allow get: if request.auth != null && request.auth.uid == userId;
+      allow list, create, update, delete: if false;
+    }
+
+    match /cardUsage/{dayId} {
+      allow read, write: if false;
+    }
+
+    match /resellerUsers/{userId} {
+      // A partner may see their own approval status, but cannot grant access
+      // to themselves or read another reseller's account.
+      allow get: if request.auth != null && request.auth.uid == userId;
+      allow list, create, update, delete: if false;
+    }
+
+    match /resellerApplications/{userId} {
+      // Applications are handled by protected server functions so applicants
+      // cannot approve themselves or view another seller's private details.
+      allow read, write: if false;
+    }
+
+    match /creatorProfiles/{profileId} {
+      // Public community data is served only after a protected review function
+      // approves it. Direct client access is intentionally blocked.
+      allow read, write: if false;
+    }
+
+    match /creatorOpportunities/{opportunityId} {
+      allow read, write: if false;
+    }
   }
 }

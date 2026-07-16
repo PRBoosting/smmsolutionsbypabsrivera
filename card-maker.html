@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="shareable-card.css" />
+    <link rel="stylesheet" href="token-packs.css" />
+    <link rel="stylesheet" href="card-tutorial.css" />
   </head>
   <body>
     <header class="site-header card-header"><a class="brand" href="index.html"><span class="brand-mark">↗</span><span>SMM <b>Solutions</b><small>by Pabs Rivera</small></span></a><a class="back-link" href="index.html">← Back to services</a></header>
@@ -17,6 +19,11 @@
       <section class="card-maker-intro"><p class="eyebrow">FREE SHAREABLE LINK CARDS</p><h1>Turn a link into<br /><span>a shareable card.</span></h1><p>Create a hosted card with an image, title, description, destination link, and click count. Sign in first to keep card creation safe for everyone.</p><button id="sign-in" class="button button-primary" type="button">Sign in with Google <span>→</span></button><p id="account-status" class="account-status">Sign in to create your first card.</p></section>
       <section class="card-maker-workspace" aria-label="Link card maker">
         <form id="share-card-form" class="share-card-form">
+          <fieldset class="card-tier" aria-label="Choose a card type">
+            <legend>Choose your card</legend>
+            <label class="tier-choice"><input type="radio" name="tier" value="free" checked /><span><b>Free daily card</b><small>1 per day · Standard title and description</small></span></label>
+            <label class="tier-choice"><input type="radio" name="tier" value="premium" /><span><b>Premium card · 1 token</b><small>Custom title, description, social preview, and click count</small></span></label>
+          </fieldset>
           <label>Card image <input name="image" type="file" accept="image/png,image/jpeg,image/webp" required /></label>
           <label>Destination link <input name="destination" type="url" placeholder="https://example.com" required /></label>
           <label>Card title <input name="title" maxlength="62" placeholder="What should people see?" required /></label>
@@ -27,8 +34,23 @@
         <div class="card-preview-wrap"><p class="eyebrow">PREVIEW</p><canvas id="card-preview" width="1200" height="630" aria-label="Your link card preview"></canvas><p>Images are resized before publishing so the card stays lightweight.</p></div>
       </section>
       <section class="share-result" id="share-result" hidden><p class="eyebrow">YOUR CARD IS LIVE</p><h2>Ready to share.</h2><p>Anyone with this link can view your card and open its destination.</p><div><input id="share-url" readonly /><button id="copy-share-url" type="button">Copy link</button></div><a id="open-share-card" class="button button-quiet" target="_blank" rel="noreferrer">Open card ↗</a></section>
-      <p class="card-disclaimer">Cards are public once published. Do not use private, copyrighted, unsafe, or misleading content. SMM Solutions may remove abusive cards.</p>
+      <section class="card-tutorial" aria-labelledby="card-tutorial-title">
+        <div class="card-tutorial-head"><div><p class="eyebrow">QUICK TUTORIAL</p><h2 id="card-tutorial-title">How to create and share a card</h2></div><p>Use a clear image, a working link, and a simple message people can understand at a glance.</p></div>
+        <div class="tutorial-steps">
+          <article class="tutorial-step"><span class="tutorial-number">1</span><h3>Sign in</h3><p>Tap <b>Sign in with Google</b>. Your account keeps the free daily card and any premium tokens safe.</p></article>
+          <article class="tutorial-step"><span class="tutorial-number">2</span><h3>Choose your card</h3><p>Use the free daily card for a simple link. Choose Premium for a custom title and description.</p></article>
+          <article class="tutorial-step"><span class="tutorial-number">3</span><h3>Add image and link</h3><p>Upload a clear image, then paste the website, product, video, or page link people should open.</p></article>
+          <article class="tutorial-step"><span class="tutorial-number">4</span><h3>Publish and share</h3><p>Copy your new card link. Post the original card link on Facebook or WhatsApp to show its image preview.</p></article>
+        </div>
+        <p class="tutorial-tip"><b>Helpful tip:</b> Keep the original SMM card link for Facebook and WhatsApp. Shortened links are better for bios or direct messages, but may not show the custom image preview.</p>
+      </section>
+      <section class="token-packs" aria-label="Premium token packs">
+        <div><p class="eyebrow">PREMIUM TOKENS</p><h2>Save more with a pack.</h2><p>One token creates one premium card. Tokens do not expire. After payment, message SMM Solutions with the Google email you used to sign in so your tokens can be added safely.</p></div>
+        <div class="pack-grid"><article><b>Starter</b><strong>5</strong><span>tokens</span><em>₱99</em></article><article><b>Growth</b><strong>20</strong><span>tokens</span><em>₱299</em></article><article><b>Pro</b><strong>50</strong><span>tokens</span><em>₱499</em></article></div>
+        <a class="button button-quiet" href="https://www.facebook.com/smmsolutionsv2/" target="_blank" rel="noreferrer">Message to buy tokens</a>
+      </section>
+      <p class="card-disclaimer">Safety limits: one free card per signed-in user daily, premium cards require tokens, and a site-wide daily limit protects the service. Cards are public once published. Do not use private, copyrighted, unsafe, or misleading content. SMM Solutions may remove abusive cards.</p>
     </main>
-    <script type="module" src="shareable-card-maker.js"></script>
+    <script type="module" src="shareable-card-maker.js?v=server-upload-2"></script>
   </body>
 </html>
