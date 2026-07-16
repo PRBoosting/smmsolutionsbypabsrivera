@@ -11,6 +11,20 @@
     });
   };
 
+  const updateDirectoryTimes = () => {
+    const platform = document.querySelector('#directory-platform')?.textContent || '';
+    if (platform === 'YOUTUBE SERVICES') return;
+    const items = [...document.querySelectorAll('#directory-services .directory-service small')];
+    const fastItems = platform === 'ALL PLATFORMS' ? items.slice(0, 3) : items;
+    fastItems.forEach(item => {
+      item.textContent = item.textContent.replace(/Usually .+$/, 'Minutes-hours');
+    });
+  };
+
   updateCardTimes();
-  document.querySelectorAll('[data-service-filter]').forEach(button => button.addEventListener('click', updateCardTimes));
+  updateDirectoryTimes();
+  document.querySelectorAll('[data-service-filter]').forEach(button => button.addEventListener('click', () => {
+    updateCardTimes();
+    updateDirectoryTimes();
+  }));
 })();
