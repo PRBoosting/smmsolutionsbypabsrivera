@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="link-fixer.css" />
     <link rel="stylesheet" href="shorten-link.css" />
     <link rel="stylesheet" href="feature-order.css" />
+    <link rel="stylesheet" href="samples.css" />
+    <link rel="stylesheet" href="sample-placement.css" />
   </head>
   <body>
     <header class="site-header">
@@ -124,6 +126,13 @@
           <article><img src="assets/website-promos/beauty-business.png" alt="Beauty Business website package promo" loading="lazy" /><div><p>BEAUTY BUSINESS</p><h3 class="currency-price" data-php="1499">₱1,499</h3><span>Service menu, gallery & booking button</span></div></article>
           <article class="website-features-card"><img src="assets/website-promos/features-included.png" alt="Website package features included" loading="lazy" /><div><p>EVERY PACKAGE</p><h3>Built to launch</h3><span>Hosting, mobile-ready design and Messenger integration.</span></div></article>
         </div>
+        <section class="website-samples" id="website-samples" aria-labelledby="website-samples-title">
+          <div class="website-samples-heading"><p class="eyebrow">LIVE WEBSITE SAMPLES</p><h3 id="website-samples-title">See websites we have created.</h3><p>Open a live sample to see how a business website can look and work.</p></div>
+          <div class="website-samples-grid">
+            <a class="website-sample-card calapure-sample" href="https://calapureph.netlify.app/" target="_blank" rel="noreferrer"><span class="sample-browser"><i></i><i></i><i></i></span><span class="sample-type">PRODUCT WEBSITE</span><strong>CalaPure PH</strong><small>Visit live website <b>&nearr;</b></small></a>
+            <a class="website-sample-card promovox-sample" href="https://promovoxsolutions.netlify.app/" target="_blank" rel="noreferrer"><span class="sample-browser"><i></i><i></i><i></i></span><span class="sample-type">BUSINESS WEBSITE</span><strong>PromoVox Solutions</strong><small>Visit live website <b>&nearr;</b></small></a>
+          </div>
+        </section>
         <p class="website-creation-note">Every package includes a custom setup using your own business details, photos, and logo. Typical delivery: 2–5 days after we receive your content.</p>
       </section>
 
@@ -139,6 +148,16 @@
       <section class="process" id="how-it-works"><div class="process-heading"><p class="eyebrow">HOW TO AVAIL</p><h2>Three easy steps.</h2></div><ol><li><strong>01</strong><div><h3>Pick a package</h3><p>Choose the platform and package that fits your goal.</p></div></li><li><strong>02</strong><div><h3>Message our page</h3><p>Send your order details and the public link to the profile, account, post, or video to be boosted.</p></div></li><li><strong>03</strong><div><h3>Pay & relax</h3><p>We’ll confirm your order and get your boost underway.</p></div></li></ol></section>
 
       <section class="about" id="about"><div><p class="eyebrow">WHY SMM SOLUTIONS</p><h2>Proven safe, legit growth support.</h2><p>We’re here to help you build social proof and strengthen your online presence—without making ordering complicated. To process boosting services, we only ask for the public link to your profile, account, post, or video. We never need your password or login details.</p><a href="https://www.facebook.com/smmsolutionsv2/" target="_blank" rel="noreferrer" class="text-link">Talk to us on Facebook →</a></div><div class="values"><div><b>100%</b><span>Safe & secure</span></div><div><b>Fast</b><span>Delivery</span></div><div><b>Real</b><span>Friendly support</span></div></div></section>
+
+      <section class="client-reviews" id="reviews" aria-labelledby="reviews-title">
+        <div class="reviews-heading"><p class="eyebrow">CLIENT FEEDBACK</p><h2 id="reviews-title">Trusted by clients who wanted to grow.</h2><p>Real recommendations shared with permission. Client surnames are shown as initials for privacy.</p></div>
+        <div class="reviews-grid">
+          <article class="review-card"><div class="review-top"><span class="review-service">FOLLOWER GROWTH</span><span aria-label="Five star rating">★★★★★</span></div><blockquote>“From 0 followers to 1K! Thank you boss! Sa uulitin. Legit pa rin as before!”</blockquote><footer><b>Vhan S.</b><small>Followers growth service</small></footer></article>
+          <article class="review-card"><div class="review-top"><span class="review-service">1M VIDEO VIEWS</span><span aria-label="Five star rating">★★★★★</span></div><blockquote>“If you’re looking for a trusted boosting service, ito na yun! Affordable rates, mabilis kausap, at quality ang results. Sulit ang bayad.”</blockquote><footer><b>Hulio A.</b><small>1M video views service</small></footer></article>
+          <article class="review-card review-card-highlight"><div class="review-top"><span class="review-service">10K FOLLOWERS + 300K VIEWS</span><span aria-label="Five star rating">★★★★★</span></div><blockquote>“Sobrang legit talaga. More blessings to come. Namonetize rin sa wakas!”</blockquote><footer><b>AJ P.</b><small>Followers and video views package</small></footer></article>
+        </div>
+        <a class="reviews-link" href="https://www.facebook.com/share/p/19AQ931SJP/" target="_blank" rel="noreferrer">See the recommendation on Facebook <b>→</b></a>
+      </section>
 
       <section class="faq" id="faq"><div><p class="eyebrow">FAQ</p><h2>Quick answers.</h2><p>Tap a question to see the details.</p></div><div class="faq-list"><details><summary>What information do you need for boosting?</summary><p>Only the public link to the profile, account, post, or video. Never share passwords or login details.</p></details><details><summary>How do I know my order is being processed?</summary><p>Use your Order ID to request a status update. If you added your optional email to the order form, you can also receive status emails.</p></details><details><summary>How can I pay?</summary><p>GCash and Maribank are accepted. Follow the payment instructions in the order form and upload your receipt if you have paid.</p></details><details><summary>Why choose a promo package?</summary><p>Promo packages group popular services into a better-value option. For a custom amount, use the calculator above for the regular-rate estimate.</p></details></div></section>
 
@@ -252,6 +271,17 @@
         form.elements.image.addEventListener('change', event => { const file = event.target.files[0]; if (!file) { image = null; draw(); return; } const reader = new FileReader(); reader.onload = () => { image = new Image(); image.onload = draw; image.src = reader.result; }; reader.readAsDataURL(file); });
         form.addEventListener('submit', event => { event.preventDefault(); draw(); });
         dialog.querySelector('.download-card').addEventListener('click', () => { draw(); const link = document.createElement('a'); link.download = 'smm-solutions-link-card.png'; link.href = canvas.toDataURL('image/png'); link.click(); });
+      })();
+    </script>
+    <script>
+      (() => {
+        const websiteLink = document.querySelector('.website-nav-link');
+        if (!websiteLink || document.querySelector('.samples-nav-link')) return;
+        const samplesLink = document.createElement('a');
+        samplesLink.className = 'samples-nav-link';
+        samplesLink.href = '#website-samples';
+        samplesLink.textContent = 'Samples';
+        websiteLink.insertAdjacentElement('afterend', samplesLink);
       })();
     </script>
     <script src="qr.js"></script>
