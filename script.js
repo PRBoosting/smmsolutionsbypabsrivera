@@ -53,7 +53,16 @@ const chatForm = document.querySelector('.chat-form');
 const chatInput = chatForm.querySelector('input');
 function toggleChat(open) { chat.classList.toggle('open', open); chat.setAttribute('aria-hidden', !open); launcher.setAttribute('aria-expanded', open); if (open) chatInput.focus(); }
 function addMessage(text, type) { const message = document.createElement('div'); message.className = `message ${type}`; message.textContent = text; messages.append(message); messages.scrollTop = messages.scrollHeight; }
-function reply(question) {
+async function reply(question) {
+  if (typeof window.askSmmAssistant === 'function') {
+    try {
+      const answer = await window.askSmmAssistant(question);
+      addMessage(answer, 'bot');
+      return;
+    } catch (error) {
+      console.warn('AI assistant fallback:', error);
+    }
+  }
   const text = question.toLowerCase();
   let answer = 'I can help with Facebook, Instagram, TikTok, YouTube, and X / Twitter services. Please message our Facebook page with the package you are interested in.';
   if (text.includes('order') || text.includes('avail')) answer = 'Choose a platform and package, then send the public link to your profile, account, post, or video. Never share passwords or login details.';

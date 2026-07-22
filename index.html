@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="feature-order.css" />
     <link rel="stylesheet" href="samples.css" />
     <link rel="stylesheet" href="sample-placement.css" />
+    <link rel="stylesheet" href="reviews.css" />
   </head>
   <body>
     <header class="site-header">
@@ -166,7 +167,7 @@
     <footer><a class="brand" href="#top"><span class="brand-mark">↗</span><span>SMM <b>Solutions</b><small>by Pabs Rivera</small></span></a><p>© <span id="year"></span> SMM Solutions by Pabs Rivera</p><div class="footer-links"><button type="button" data-dialog="order-lookup">Track order</button><button type="button" data-dialog="referral">Referral</button><button type="button" data-dialog="qr-maker">QR maker</button><a href="https://www.facebook.com/smmsolutionsv2/" target="_blank" rel="noreferrer">Facebook ↗</a></div></footer>
 
     <button class="chat-launcher" aria-label="Chat with SMM Solutions" aria-expanded="false"><span>✦</span><em>Chat with us</em></button>
-    <section class="chat-widget" aria-label="SMM Solutions chat assistant" aria-hidden="true"><header><div><span class="chat-avatar">↗</span><div><b>SMM Assistant</b><small>Usually replies instantly</small></div></div><button class="chat-close" aria-label="Close chat">×</button></header><div class="chat-messages" aria-live="polite"><div class="message bot">Hi! I’m the SMM Solutions assistant. How can I help you today?</div><div class="message bot">Our services are proven safe & legit. For boosting, we only need the public link to your profile, account, post, or video—never your password or login details.</div></div><div class="quick-replies"><button data-question="Is this safe and what information do you need?">Safe & legit</button><button data-question="What services do you offer?">Services</button><button data-question="How do I order?">How to order</button><button data-question="What are the payment options?">Payment</button></div><form class="chat-form"><input aria-label="Type a message" placeholder="Type your question..." autocomplete="off" /><button aria-label="Send message">↑</button></form></section>
+    <section class="chat-widget" aria-label="SMM Solutions chat assistant" aria-hidden="true"><header><div><span class="chat-avatar">↗</span><div><b>SMM AI Assistant</b><small>AI replies in a few seconds</small></div></div><button class="chat-close" aria-label="Close chat">×</button></header><div class="chat-messages" aria-live="polite"><div class="message bot">Hi! I’m the SMM Solutions AI assistant. How can I help you today?</div><div class="message bot">For boosting, we only need the public link to your profile, account, post, or video—never your password or login details.</div></div><div class="quick-replies"><button data-question="Is this safe and what information do you need?">Safe & legit</button><button data-question="What services do you offer?">Services</button><button data-question="How do I order?">How to order</button><button data-question="What are the payment options?">Payment</button></div><form class="chat-form"><input aria-label="Type a message" placeholder="Type your question..." autocomplete="off" /><button aria-label="Send message">↑</button></form></section>
     <dialog class="package-modal"><button class="close-modal" aria-label="Close package viewer">×</button><img src="" alt="Service package list" /><a class="button button-primary" href="https://www.facebook.com/smmsolutionsv2/" target="_blank" rel="noreferrer">Ask about this package →</a></dialog>
     <dialog class="utility-modal" id="order-lookup"><button class="close-utility" aria-label="Close order tracking">×</button><p class="eyebrow">ORDER TRACKING</p><h2>Check your order status.</h2><p>Enter your Order ID and we’ll open a Messenger message for SMM Solutions. For privacy, status details are confirmed directly with the account owner.</p><form class="lookup-form"><label>Order ID <input name="order-id" placeholder="Example: SMM-20260713-0001" required /></label><button class="button button-primary" type="submit">Check via Messenger <span>→</span></button></form></dialog>
     <dialog class="utility-modal" id="referral"><button class="close-utility" aria-label="Close referral form">×</button><p class="eyebrow">REFER A FRIEND</p><h2>Share SMM Solutions.</h2><p>Send us your name and your friend’s name through Messenger. We’ll confirm any available referral bonus with you.</p><form class="referral-form"><label>Your name <input name="referrer" required /></label><label>Friend’s name <input name="friend" required /></label><button class="button button-primary" type="submit">Send referral <span>→</span></button></form></dialog>
@@ -179,6 +180,7 @@
     <script src="calculator.js"></script>
     <script src="currency.js"></script>
     <script src="script.js"></script>
+    <script type="module" src="ai-chat.js"></script>
     <script src="extras.js"></script>
     <script src="delivery-times.js"></script>
     <script>
