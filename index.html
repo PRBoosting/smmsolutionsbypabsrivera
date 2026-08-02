@@ -133,6 +133,7 @@
             <a class="website-sample-card calapure-sample" href="https://calapureph.netlify.app/" target="_blank" rel="noreferrer"><span class="sample-browser"><i></i><i></i><i></i></span><span class="sample-type">PRODUCT WEBSITE</span><strong>CalaPure PH</strong><small>Visit live website <b>&nearr;</b></small></a>
             <a class="website-sample-card promovox-sample" href="https://promovoxsolutions.netlify.app/" target="_blank" rel="noreferrer"><span class="sample-browser"><i></i><i></i><i></i></span><span class="sample-type">BUSINESS WEBSITE</span><strong>PromoVox Solutions</strong><small>Visit live website <b>&nearr;</b></small></a>
             <a class="website-sample-card hurray-sample" href="https://novast-arch.github.io/hurraydeliveryservice/" target="_blank" rel="noreferrer"><span class="sample-browser"><i></i><i></i><i></i></span><span class="sample-type">DELIVERY SERVICE WEBSITE</span><strong>Hurray Delivery Service</strong><small>Visit live website <b>&nearr;</b></small></a>
+            <a class="website-sample-card trive-sample" href="https://trivebeautylounge.com/" target="_blank" rel="noreferrer"><span class="sample-browser"><i></i><i></i><i></i></span><span class="sample-type">BEAUTY BUSINESS WEBSITE</span><strong>Trive Beauty Lounge</strong><small>Visit live website <b>&nearr;</b></small></a>
           </div>
         </section>
         <p class="website-creation-note">Every package includes a custom setup using your own business details, photos, and logo. Typical delivery: 2–5 days after we receive your content.</p>
@@ -288,5 +289,47 @@
       })();
     </script>
     <script src="qr.js"></script>
+    <script>
+      (() => {
+        const list = document.querySelector('.website-package-list');
+        if (!list || list.closest('.website-package-carousel')) return;
+
+        const carousel = document.createElement('div');
+        carousel.className = 'website-package-carousel';
+        carousel.setAttribute('aria-label', 'Website package carousel');
+        const viewport = document.createElement('div');
+        viewport.className = 'website-carousel-viewport';
+        const previous = document.createElement('button');
+        previous.className = 'website-carousel-arrow website-carousel-prev';
+        previous.type = 'button'; previous.setAttribute('aria-label', 'Previous package'); previous.innerHTML = '&#8249;';
+        const next = document.createElement('button');
+        next.className = 'website-carousel-arrow website-carousel-next';
+        next.type = 'button'; next.setAttribute('aria-label', 'Next package'); next.innerHTML = '&#8250;';
+        const dots = document.createElement('div');
+        dots.className = 'website-carousel-dots'; dots.setAttribute('aria-label', 'Choose package slide');
+        list.before(carousel); carousel.append(previous, viewport, next, dots); viewport.append(list);
+
+        const cards = Array.from(list.children); let index = 0; let timer; let touchStart = 0;
+        const visible = () => window.innerWidth <= 760 ? 1 : window.innerWidth <= 1050 ? 2 : 3;
+        const pages = () => Math.max(1, cards.length - visible() + 1);
+        const drawDots = () => {
+          dots.innerHTML = '';
+          for (let i = 0; i < pages(); i++) { const dot = document.createElement('button'); dot.className = 'website-carousel-dot' + (i === index ? ' active' : ''); dot.type = 'button'; dot.setAttribute('aria-label', `Show package ${i + 1}`); dot.addEventListener('click', () => { index = i; update(); restart(); }); dots.append(dot); }
+        };
+        const update = () => { index = Math.max(0, Math.min(index, pages() - 1)); const first = cards[0]; const gap = parseFloat(getComputedStyle(list).gap) || 14; list.style.transform = `translateX(-${index * (first.offsetWidth + gap)}px)`; drawDots(); };
+        const restart = () => { clearInterval(timer); timer = setInterval(() => { index = (index + 1) % pages(); update(); }, 10000); };
+        previous.addEventListener('click', () => { index = (index - 1 + pages()) % pages(); update(); restart(); });
+        next.addEventListener('click', () => { index = (index + 1) % pages(); update(); restart(); });
+        viewport.addEventListener('touchstart', event => { touchStart = event.changedTouches[0].screenX; }, {passive:true});
+        viewport.addEventListener('touchend', event => { const distance = event.changedTouches[0].screenX - touchStart; if (Math.abs(distance) > 36) { index = distance < 0 ? (index + 1) % pages() : (index - 1 + pages()) % pages(); update(); restart(); } }, {passive:true});
+        window.addEventListener('resize', update); update(); restart();
+
+        const widget = document.createElement('aside');
+        widget.className = 'best-seller-widget';
+        widget.innerHTML = '<div class="best-seller-widget-top"><span>POPULAR RIGHT NOW</span><button class="best-seller-widget-close" type="button" aria-label="Close best sellers">×</button></div><div class="best-seller-widget-body"><b>Our Best Seller Services</b><p>Facebook Followers, TikTok Views, Instagram Likes, and website creation packages.</p><a href="#services">View popular services <strong>→</strong></a></div>';
+        document.body.append(widget);
+        widget.querySelector('.best-seller-widget-close').addEventListener('click', () => widget.remove());
+      })();
+    </script>
   </body>
 </html>
