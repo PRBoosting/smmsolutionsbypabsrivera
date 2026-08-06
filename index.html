@@ -294,6 +294,9 @@
       (() => {
         const list = document.querySelector('.website-package-list');
         if (!list || list.closest('.website-package-carousel')) return;
+        const carouselStyle = document.createElement('style');
+        carouselStyle.textContent = '.website-package-carousel{position:relative;margin-top:14px;padding:0 42px}.website-carousel-viewport{overflow:hidden;padding:4px}.website-package-carousel .website-package-list{display:flex;gap:14px;margin:0;transition:transform .55s cubic-bezier(.22,.8,.25,1);will-change:transform}.website-package-carousel .website-package-list article{flex:0 0 calc((100% - 28px)/3);min-width:0}.website-carousel-arrow{position:absolute;z-index:2;top:50%;display:grid;width:32px;height:32px;place-items:center;border:1px solid #bdd4f0;border-radius:50%;background:#fff;color:#0d4f9e;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 7px 16px #113b6e24;transform:translateY(-50%)}.website-carousel-prev{left:0}.website-carousel-next{right:0}.website-carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:15px}.website-carousel-dot{width:7px;height:7px;padding:0;border:0;border-radius:999px;background:#bfd0e8;cursor:pointer}.website-carousel-dot.active{width:22px;background:#1265cf}@media(max-width:760px){.website-package-carousel{padding:0 34px}.website-package-carousel .website-package-list article{flex-basis:100%}.website-carousel-arrow{width:28px;height:28px}}';
+        document.head.append(carouselStyle);
 
         const carousel = document.createElement('div');
         carousel.className = 'website-package-carousel';
