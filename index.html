@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="samples.css" />
     <link rel="stylesheet" href="sample-placement.css" />
     <link rel="stylesheet" href="reviews.css" />
+    <link rel="stylesheet" href="ui-refresh.css" />
     <!-- Google Analytics: visitor and page-view tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTL26W69X9"></script>
     <script>
@@ -49,14 +50,20 @@
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">BOOSTING &amp; WEBSITE CREATION</p>
-          <h1>Get seen.<br /><span>Build your online home.</span></h1>
-          <p class="hero-text">Choose straightforward social-media support or a business website that helps customers message, order, book, or inquire with one tap.</p>
+          <p class="eyebrow">SOCIAL GROWTH &amp; WEBSITE SERVICES</p>
+          <h1>Everything you need<br />to <span>grow with clarity.</span></h1>
+          <p class="hero-text">Boost your social presence, build a professional website, and access useful tools—all in one straightforward platform.</p>
           <div class="hero-actions"><a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScyaMF0jMytzyNUKlN-bSIbnXONpPikQS47NKEXNJ58gSCv9g/viewform?usp=publish-editor" target="_blank" rel="noreferrer">Start my order <span>→</span></a><a class="button button-quiet" href="#choose-goal">Choose my service</a></div>
           <button class="order-lookup-link" type="button" data-dialog="order-lookup">Already ordered? Track your Order ID →</button>
           <div class="trust-row"><span>✓ Public link only</span><span>⚡ Minutes–hours estimates</span><span>♡ Order updates available</span></div>
         </div>
-        <div class="hero-art"><div class="orb orb-one"></div><div class="orb orb-two"></div><img src="assets/brand-illustration.png" alt="SMM Solutions by Pabs Rivera" /></div>
+        <aside class="hero-service-summary" aria-label="SMM Solutions service overview">
+          <div class="summary-head"><span>SMM SOLUTIONS</span><b>What we can help with</b></div>
+          <a href="#services"><i>01</i><div><small>Social media growth</small><strong>Platform packages &amp; custom requests</strong></div><b>→</b></a>
+          <a href="#website-creation"><i>02</i><div><small>Website creation</small><strong>Business websites from <span class="currency-price" data-php="1299">₱1,299</span></strong></div><b>→</b></a>
+          <a href="#features"><i>03</i><div><small>Customer features</small><strong>Tools, calculator, marketplace &amp; more</strong></div><b>→</b></a>
+          <p>Choose a goal, see the options, then order with confidence.</p>
+        </aside>
       </section>
 
       <section class="goal-dashboard" id="choose-goal" aria-labelledby="goal-dashboard-title">
@@ -92,7 +99,18 @@
         <p>Browse by platform. These promo packages are our best-value options, while the quick quote above is available for custom amounts.</p>
       </section>
 
-      <div class="service-filters" aria-label="Filter services by platform">
+      <section class="service-showcase" aria-label="Social growth service categories">
+        <article class="showcase-intro"><span>POPULAR CHOICES</span><h3>Social growth packages</h3><p>Choose your platform, view promos, or calculate a custom amount using regular rates.</p><a href="https://docs.google.com/forms/d/e/1FAIpQLScyaMF0jMytzyNUKlN-bSIbnXONpPikQS47NKEXNJ58gSCv9g/viewform?usp=publish-editor" target="_blank" rel="noreferrer">Start an order →</a></article>
+        <a class="showcase-platform showcase-facebook" href="#service-filters"><span>f</span><div><small>FACEBOOK</small><b>Followers, reactions, views &amp; engagements</b><p>Promo packages and PH-based options available.</p></div><em>View options →</em></a>
+        <a class="showcase-platform showcase-instagram" href="#service-filters"><span>◎</span><div><small>INSTAGRAM</small><b>Followers, likes, views, saves &amp; reach</b><p>Explore promos or use regular-rate calculation.</p></div><em>View options →</em></a>
+        <a class="showcase-platform showcase-tiktok" href="#service-filters"><span>♪</span><div><small>TIKTOK</small><b>Followers, likes, views, shares &amp; saves</b><p>Multiple promo tiers for content growth.</p></div><em>View options →</em></a>
+        <a class="showcase-platform showcase-youtube" href="#service-filters"><span>▶</span><div><small>YOUTUBE</small><b>Subscribers, watch hours, views &amp; likes</b><p>Support for channels and individual videos.</p></div><em>View options →</em></a>
+        <a class="showcase-platform showcase-twitter" href="#service-filters"><span>𝕏</span><div><small>X / TWITTER</small><b>Followers, likes, views &amp; impressions</b><p>Packages for account visibility and tweets.</p></div><em>View options →</em></a>
+        <article class="showcase-calculator"><span>CUSTOM QUANTITY?</span><h3>Use the live rate calculator.</h3><p>Calculate a regular-rate estimate in your preferred currency.</p><a class="button button-primary" href="#calculator">Open calculator <b>→</b></a></article>
+        <div class="showcase-delivery"><span>ESTIMATED DELIVERY</span><b>Most social-growth orders are processed within minutes to hours.</b><a href="#process">How ordering works →</a></div>
+      </section>
+
+      <div class="service-filters" id="service-filters" aria-label="Filter services by platform">
         <button class="active" type="button" data-service-filter="all">All promos</button>
         <button type="button" data-service-filter="facebook">Facebook</button>
         <button type="button" data-service-filter="instagram">Instagram</button>
