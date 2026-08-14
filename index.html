@@ -22,7 +22,13 @@
     <link rel="stylesheet" href="reviews.css" />
     <link rel="stylesheet" href="ui-refresh.css" />
     <link rel="stylesheet" href="promo-first.css" />
+    <link rel="stylesheet" href="promo-cards-refresh.css" />
+    <link rel="stylesheet" href="promo-cards-compact.css" />
+    <link rel="stylesheet" href="promo-card-colors.css" />
+    <link rel="stylesheet" href="hero-summary-carousel.css" />
     <link rel="stylesheet" href="promo-floater.css" />
+    <link rel="stylesheet" href="calculator-popout.css" />
+    <link rel="stylesheet" href="lower-sections-refresh.css" />
     <!-- Google Analytics: visitor and page-view tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTL26W69X9"></script>
     <script>
@@ -34,9 +40,9 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="SMM Solutions home"><span class="brand-mark">↗</span><span>SMM <b>Solutions</b><small>by Pabs Rivera</small></span></a>
+      <div class="brand"><a class="brand-messenger" href="https://m.me/smmsolutionsv2" target="_blank" rel="noreferrer" aria-label="Message SMM Solutions on Messenger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c-5.1 0-9.2 3.8-9.2 8.6 0 2.7 1.3 5.1 3.5 6.7v3.7l3.4-1.9c.7.2 1.5.3 2.3.3 5.1 0 9.2-3.8 9.2-8.6S17.1 3.2 12 3.2Zm1 11.1-2.4-2.5-4.7 2.5 5.2-5.5 2.5 2.5 4.6-2.5-5.2 5.5Z"/></svg></a><a class="brand-name" href="#top">SMM <b>Solutions</b><small>by Pabs Rivera</small></a></div>
       <button class="menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
-      <nav aria-label="Main navigation"><a href="#services">Services</a><a class="website-nav-link" href="#website-creation">Websites <span>NEW</span></a><a class="marketplace-link" href="https://smm-solutions-marketplace-b9888.web.app">Buy &amp; Sell</a><a class="creator-community-link" href="creator-community.html">Creator Hub <span>NEW</span></a><a class="vip-reseller-link" href="vip-reseller.html">VIP Resellers <span>NEW</span></a><button class="nav-link-button" type="button" data-dialog="order-lookup">Track order</button><a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScyaMF0jMytzyNUKlN-bSIbnXONpPikQS47NKEXNJ58gSCv9g/viewform?usp=publish-editor">Order now ↗</a></nav>
+      <nav aria-label="Main navigation"><a href="#services">Services</a><a class="website-nav-link" href="#website-samples">Websites <span>NEW</span></a><a class="marketplace-link" href="https://smm-solutions-marketplace-b9888.web.app">Buy &amp; Sell</a><a class="creator-community-link" href="creator-community.html">Creator Hub <span>NEW</span></a><a class="vip-reseller-link" href="vip-reseller.html">VIP Resellers <span>NEW</span></a><button class="nav-link-button" type="button" data-dialog="order-lookup">Track order</button><a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScyaMF0jMytzyNUKlN-bSIbnXONpPikQS47NKEXNJ58gSCv9g/viewform?usp=publish-editor">Order now ↗</a></nav>
     </header>
 
     <div class="promo-ribbon" role="note"><span>LIMITED PROMO PACKAGES</span><b>Better-value bundles are available now.</b><a href="#services">View deals</a></div>
@@ -57,7 +63,6 @@
           <p class="hero-text">Boost your social presence, build a professional website, and access useful tools—all in one straightforward platform.</p>
           <div class="hero-actions"><a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScyaMF0jMytzyNUKlN-bSIbnXONpPikQS47NKEXNJ58gSCv9g/viewform?usp=publish-editor" target="_blank" rel="noreferrer">Start my order <span>→</span></a><a class="button button-quiet" href="#choose-goal">Choose my service</a></div>
           <button class="order-lookup-link" type="button" data-dialog="order-lookup">Already ordered? Track your Order ID →</button>
-          <div class="trust-row"><span>✓ Public link only</span><span>⚡ Minutes–hours estimates</span><span>♡ Order updates available</span></div>
         </div>
         <aside class="hero-service-summary" aria-label="SMM Solutions service overview">
           <div class="summary-head"><span>SMM SOLUTIONS</span><b>What we can help with</b></div>
@@ -78,7 +83,7 @@
           <a class="goal-website" href="#website-creation"><span>⌂</span><b>Build my website</b><small>Packages from <i class="currency-price" data-php="1299">₱1,299</i> →</small></a>
           <a class="goal-vip" href="vip-reseller.html"><span>★</span><b>Become a VIP Reseller</b><small>See reseller benefits →</small></a>
         </div>
-        <section class="customer-tools goal-customer-tools" aria-label="Customer tools">
+        <section class="customer-tools goal-customer-tools" aria-label="Customer tools" hidden>
           <div class="tool-copy"><p class="eyebrow">QUICK TOOLS</p><h2>Helpful in one tap.</h2></div>
           <div class="tool-actions"><button type="button" data-dialog="order-lookup"><span>01</span><b>Track an order</b><small>Use your Order ID</small></button><button class="referral-bonus" type="button" data-dialog="referral"><span>✦ REFERRAL BONUS</span><b>Refer a friend</b><small>Ask about your reward →</small></button><a href="https://www.facebook.com/smmsolutionsv2/" target="_blank" rel="noreferrer"><span>03</span><b>Share feedback</b><small>Message our page</small></a></div>
         </section>
@@ -121,7 +126,7 @@
         <button type="button" data-service-filter="twitter">X / Twitter</button>
       </div>
 
-      <section class="service-directory" aria-live="polite">
+      <section class="service-directory" aria-live="polite" hidden>
         <div><span class="directory-kicker" id="directory-platform">ALL PLATFORMS</span><h3 id="directory-title">Popular services, clearly grouped.</h3><p id="directory-description">Select a platform to see the service types available and their usual delivery window.</p></div>
         <div class="directory-services" id="directory-services"></div>
       </section>
@@ -179,6 +184,7 @@
 
       <section class="process" id="how-it-works"><div class="process-heading"><p class="eyebrow">HOW TO AVAIL</p><h2>Three easy steps.</h2></div><ol><li><strong>01</strong><div><h3>Pick a package</h3><p>Choose the platform and package that fits your goal.</p></div></li><li><strong>02</strong><div><h3>Message our page</h3><p>Send your order details and the public link to the profile, account, post, or video to be boosted.</p></div></li><li><strong>03</strong><div><h3>Pay & relax</h3><p>We’ll confirm your order and get your boost underway.</p></div></li></ol></section>
 
+      <div class="trust-feedback-wrap">
       <section class="about" id="about"><div><p class="eyebrow">WHY SMM SOLUTIONS</p><h2>Proven safe, legit growth support.</h2><p>We’re here to help you build social proof and strengthen your online presence—without making ordering complicated. To process boosting services, we only ask for the public link to your profile, account, post, or video. We never need your password or login details.</p><a href="https://www.facebook.com/smmsolutionsv2/" target="_blank" rel="noreferrer" class="text-link">Talk to us on Facebook →</a></div><div class="values"><div><b>100%</b><span>Safe & secure</span></div><div><b>Fast</b><span>Delivery</span></div><div><b>Real</b><span>Friendly support</span></div></div></section>
 
       <section class="client-reviews" id="reviews" aria-labelledby="reviews-title">
@@ -190,12 +196,13 @@
         </div>
         <a class="reviews-link" href="https://www.facebook.com/share/p/19AQ931SJP/" target="_blank" rel="noreferrer">See the recommendation on Facebook <b>→</b></a>
       </section>
+      </div>
 
       <section class="faq" id="faq"><div><p class="eyebrow">FAQ</p><h2>Quick answers.</h2><p>Tap a question to see the details.</p></div><div class="faq-list"><details><summary>What information do you need for boosting?</summary><p>Only the public link to the profile, account, post, or video. Never share passwords or login details.</p></details><details><summary>How do I know my order is being processed?</summary><p>Use your Order ID to request a status update. If you added your optional email to the order form, you can also receive status emails.</p></details><details><summary>How can I pay?</summary><p>GCash and Maribank are accepted. Follow the payment instructions in the order form and upload your receipt if you have paid.</p></details><details><summary>Why choose a promo package?</summary><p>Promo packages group popular services into a better-value option. For a custom amount, use the calculator above for the regular-rate estimate.</p></details></div></section>
 
       <section class="contact"><p class="eyebrow">READY WHEN YOU ARE</p><h2>Let’s get your page moving.</h2><p>Submit your order online with your public link and preferred package. We’ll confirm availability, payment details, and support through Facebook Messenger.</p><a class="button button-light" href="https://docs.google.com/forms/d/e/1FAIpQLScyaMF0jMytzyNUKlN-bSIbnXONpPikQS47NKEXNJ58gSCv9g/viewform?usp=publish-editor" target="_blank" rel="noreferrer">Start your order <span>↗</span></a></section>
     </main>
-    <footer><a class="brand" href="#top"><span class="brand-mark">↗</span><span>SMM <b>Solutions</b><small>by Pabs Rivera</small></span></a><p>© <span id="year"></span> SMM Solutions by Pabs Rivera</p><div class="footer-links"><button type="button" data-dialog="order-lookup">Track order</button><button type="button" data-dialog="referral">Referral</button><button type="button" data-dialog="qr-maker">QR maker</button><a href="https://www.facebook.com/smmsolutionsv2/" target="_blank" rel="noreferrer">Facebook ↗</a></div></footer>
+    <footer><div class="brand"><a class="brand-messenger" href="https://m.me/smmsolutionsv2" target="_blank" rel="noreferrer" aria-label="Message SMM Solutions on Messenger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c-5.1 0-9.2 3.8-9.2 8.6 0 2.7 1.3 5.1 3.5 6.7v3.7l3.4-1.9c.7.2 1.5.3 2.3.3 5.1 0 9.2-3.8 9.2-8.6S17.1 3.2 12 3.2Zm1 11.1-2.4-2.5-4.7 2.5 5.2-5.5 2.5 2.5 4.6-2.5-5.2 5.5Z"/></svg></a><a class="brand-name" href="#top">SMM <b>Solutions</b><small>by Pabs Rivera</small></a></div><p>© <span id="year"></span> SMM Solutions by Pabs Rivera</p><div class="footer-links"><button type="button" data-dialog="order-lookup">Track order</button><button type="button" data-dialog="referral">Referral</button><button type="button" data-dialog="qr-maker">QR maker</button><a href="https://www.facebook.com/smmsolutionsv2/" target="_blank" rel="noreferrer">Facebook ↗</a></div></footer>
 
     <button class="chat-launcher" aria-label="Chat with SMM Solutions" aria-expanded="false"><span>✦</span><em>Chat with us</em></button>
     <section class="chat-widget" aria-label="SMM Solutions chat assistant" aria-hidden="true"><header><div><span class="chat-avatar">↗</span><div><b>SMM AI Assistant</b><small>AI replies in a few seconds</small></div></div><button class="chat-close" aria-label="Close chat">×</button></header><div class="chat-messages" aria-live="polite"><div class="message bot">Hi! I’m the SMM Solutions AI assistant. How can I help you today?</div><div class="message bot">For boosting, we only need the public link to your profile, account, post, or video—never your password or login details.</div></div><div class="quick-replies"><button data-question="Is this safe and what information do you need?">Safe & legit</button><button data-question="What services do you offer?">Services</button><button data-question="How do I order?">How to order</button><button data-question="What are the payment options?">Payment</button></div><form class="chat-form"><input aria-label="Type a message" placeholder="Type your question..." autocomplete="off" /><button aria-label="Send message">↑</button></form></section>
@@ -211,6 +218,7 @@
     <script src="calculator.js"></script>
     <script src="currency.js"></script>
     <script src="script.js"></script>
+    <script src="hero-summary-carousel.js"></script>
     <script type="module" src="ai-chat.js"></script>
     <script src="extras.js"></script>
     <script src="delivery-times.js"></script>
@@ -304,17 +312,6 @@
         form.elements.image.addEventListener('change', event => { const file = event.target.files[0]; if (!file) { image = null; draw(); return; } const reader = new FileReader(); reader.onload = () => { image = new Image(); image.onload = draw; image.src = reader.result; }; reader.readAsDataURL(file); });
         form.addEventListener('submit', event => { event.preventDefault(); draw(); });
         dialog.querySelector('.download-card').addEventListener('click', () => { draw(); const link = document.createElement('a'); link.download = 'smm-solutions-link-card.png'; link.href = canvas.toDataURL('image/png'); link.click(); });
-      })();
-    </script>
-    <script>
-      (() => {
-        const websiteLink = document.querySelector('.website-nav-link');
-        if (!websiteLink || document.querySelector('.samples-nav-link')) return;
-        const samplesLink = document.createElement('a');
-        samplesLink.className = 'samples-nav-link';
-        samplesLink.href = '#website-samples';
-        samplesLink.textContent = 'Samples';
-        websiteLink.insertAdjacentElement('afterend', samplesLink);
       })();
     </script>
     <script src="qr.js"></script>

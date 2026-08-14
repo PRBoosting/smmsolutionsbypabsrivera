@@ -1,0 +1,62 @@
+/* Compact service details: blue, white, and restrained golden-yellow only. */
+.summary-overview a:nth-of-type(3) i{background:#eaf3ff;color:#1769db}
+.brand-messenger{width:37px;height:37px;flex:0 0 37px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#2297ff,#0969dd);box-shadow:0 7px 15px rgba(17,105,219,.22)}
+.brand-messenger svg{width:24px;height:24px;fill:#fff}.brand-name{display:block}.brand-name small{display:block}
+.summary-growth{background:linear-gradient(135deg,#eef7ff,#fff)!important}
+.summary-growth:after{background:#d5e9ff!important}
+.summary-growth .summary-kicker{color:#1769db!important}
+.summary-growth h2{color:#102b58!important}
+.summary-growth a{background:#1769db!important}
+
+/* Make the service-category links compact without losing the platform cues. */
+.service-showcase{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important}
+.service-showcase .showcase-platform,.service-showcase .showcase-calculator{box-sizing:border-box;min-height:106px;padding:14px 16px;border-color:#d5e3f4;border-radius:13px;background:#fff;box-shadow:0 8px 20px rgba(17,59,117,.05)}
+.service-showcase .showcase-platform{gap:10px;grid-template-columns:34px 1fr}
+.service-showcase .showcase-platform>span{width:34px;height:34px;border-radius:10px;font-size:16px}
+.service-showcase .showcase-platform b{font-size:13px;line-height:1.25}.service-showcase .showcase-platform small{font-size:8px}.service-showcase .showcase-platform p{display:none}
+.service-showcase .showcase-platform em{grid-column:2;font-size:10px;color:#1769db}.service-showcase .showcase-twitter{grid-column:auto}
+.service-showcase .showcase-calculator{display:grid;grid-column:auto;grid-template-columns:1fr auto;column-gap:12px;align-content:center;background:#f6faff;border-color:#bcd8fb}
+.service-showcase .showcase-calculator>span{grid-column:1/-1;color:#1769db;font-size:8px}.service-showcase .showcase-calculator h3{margin:4px 0 2px;font-size:16px;color:#102b58}.service-showcase .showcase-calculator p{margin:0;font-size:10px}.service-showcase .showcase-calculator .button{grid-column:2;grid-row:2/4;align-self:center;margin:0;padding:9px 11px;font-size:10px;background:#1769db;white-space:nowrap}
+
+/* A shorter horizontal ordering strip. */
+.process{max-width:1124px;margin:38px auto 0;padding:22px 28px;border-radius:16px;grid-template-columns:220px 1fr;gap:28px;background:linear-gradient(112deg,#061b47,#0b3f92);box-shadow:0 16px 30px rgba(11,53,117,.14)}
+.process .eyebrow{margin:0 0 7px;font-size:9px;color:#68c0ff}
+.process h2{font-size:29px;letter-spacing:-1.7px;line-height:1.04}
+.process-heading:after{content:"→";display:inline-flex;align-items:center;justify-content:center;width:42px;height:22px;margin-top:10px;border:1px solid rgba(115,202,255,.45);border-radius:999px;color:#70c6ff;font-size:17px}
+.process ol{display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-items:stretch}
+.process li{position:relative;display:grid;grid-template-columns:42px 1fr;align-content:center;gap:11px;min-height:76px;padding:0 17px;border:0;border-left:1px solid rgba(255,255,255,.18)}
+.process li:first-child{border-left:0}
+.process li:after{display:none}
+.process li strong{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(102,180,255,.16);border:1px solid rgba(133,204,255,.28);font-size:16px;color:#65b8ff}
+.process h3{font-size:13px;margin:0 0 5px;letter-spacing:-.2px}
+.process li p{font-size:10px;line-height:1.42;color:#c9dcf7}
+
+/* Trust information and client feedback sit together as one compact row. */
+.trust-feedback-wrap{max-width:1124px;margin:40px auto 26px;display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
+.trust-feedback-wrap .about{display:block;margin:0;padding:0}
+.trust-feedback-wrap .about h2{font-size:29px;letter-spacing:-1.7px}
+.trust-feedback-wrap .about>div>p:not(.eyebrow){margin:15px 0;font-size:13px;line-height:1.55}
+.trust-feedback-wrap .values{grid-template-columns:repeat(4,1fr);gap:7px;margin-top:19px}
+.trust-feedback-wrap .values div{padding:12px 8px;border:1px solid #dce8f7;border-radius:10px;background:#f7fbff;text-align:center}
+.trust-feedback-wrap .values div:nth-child(1):after{content:"Safe & secure"}.trust-feedback-wrap .values div:nth-child(2):after{content:"Fast delivery"}.trust-feedback-wrap .values div:nth-child(3):after{content:"Real support"}.trust-feedback-wrap .values:after{content:none;display:none}
+.trust-feedback-wrap .values b{font-size:18px}.trust-feedback-wrap .values span{display:none}
+.trust-feedback-wrap .values div:after{display:block;margin-top:4px;color:#516783;font-size:10px;font-weight:700}
+.trust-feedback-wrap .client-reviews{margin:0;padding:0;border-left:1px solid #dbe6f5;padding-left:32px}
+.trust-feedback-wrap .reviews-heading{display:flex;align-items:baseline;gap:12px}.trust-feedback-wrap .reviews-heading .eyebrow{position:absolute;margin-top:-20px;font-size:9px}.trust-feedback-wrap .reviews-heading h2{font-size:25px;letter-spacing:-1.4px;margin:0}.trust-feedback-wrap .reviews-heading p{display:none}
+.trust-feedback-wrap .reviews-grid{grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.trust-feedback-wrap .review-card{min-height:128px;padding:14px;border-radius:11px}.trust-feedback-wrap .review-service{font-size:8px}.trust-feedback-wrap .review-top{font-size:10px}.trust-feedback-wrap blockquote{font-size:11px;line-height:1.45;margin:12px 0}.trust-feedback-wrap .review-card footer{padding:0;font-size:10px}.trust-feedback-wrap .review-card footer small{font-size:9px}
+.trust-feedback-wrap .reviews-link{display:inline-block;margin-top:13px;font-size:11px;color:#1769db;font-weight:800}
+
+@media(max-width:760px){
+  .service-showcase .showcase-twitter,.service-showcase .showcase-calculator{grid-column:auto}
+  .service-showcase .showcase-platform,.service-showcase .showcase-calculator{min-height:92px;padding:11px 12px}
+  .process{margin:25px 24px 0;padding:22px;display:block;border-radius:15px}
+  .process h2{font-size:27px}.process ol{margin:17px 0 0;grid-template-columns:1fr;gap:7px}
+  .process li{padding:11px 0;border-left:0;border-top:1px solid rgba(255,255,255,.17)}
+  .process li:first-child{border-top:0}.process li:not(:last-child):after{display:none}
+  .trust-feedback-wrap{display:block;margin:36px 24px 52px}.trust-feedback-wrap .client-reviews{margin-top:38px;padding-left:0;border-left:0}
+  .trust-feedback-wrap .reviews-grid{grid-template-columns:1fr}.trust-feedback-wrap .values{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Keep the FAQ close to the feedback section instead of leaving an empty page-sized gap. */
+.faq{padding-top:42px!important}
