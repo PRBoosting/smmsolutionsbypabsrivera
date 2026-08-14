@@ -15,6 +15,13 @@ modal.querySelector('.close-modal').addEventListener('click', () => modal.close(
 modal.addEventListener('click', event => { if (event.target === modal) modal.close(); });
 document.querySelector('#year').textContent = new Date().getFullYear();
 
+// Keep custom quotes after the promo cards so visitors see the best-value bundles first.
+const promoGrid = document.querySelector('.promo-first-grid');
+const rateCalculator = document.querySelector('.calculator#calculator');
+if (promoGrid && rateCalculator && promoGrid.parentNode) {
+  promoGrid.parentNode.insertBefore(rateCalculator, promoGrid.nextSibling);
+}
+
 const directoryData = {
   all: { label:'ALL PLATFORMS', title:'Popular services, clearly grouped.', description:'Select a platform to see the service types available and their usual delivery window.', services:[['Facebook','Followers · reacts · views','Usually 1–3 days'],['Instagram','Followers · likes · views','Usually 1–3 days'],['TikTok','Followers · likes · views','Usually 1–3 days'],['YouTube','Subscribers · watch hours · views','Usually 2–5 days'],['X / Twitter','Followers · likes · impressions','Minutes–hours']] },
   facebook: { label:'FACEBOOK SERVICES', title:'Choose your Facebook goal.', description:'Browse promo packages for followers, reactions, views, shares, and PH-based audience options.', services:[['Followers','Global or PH-based','Usually 1–3 days'],['Engagement','Reacts · comments · shares','Usually 1–2 days'],['Video views','Reels and video views','Usually 1–3 days'],['Pages','Page packages & handover','Usually 1–2 days']] },
