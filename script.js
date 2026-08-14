@@ -21,6 +21,28 @@ const rateCalculator = document.querySelector('.calculator#calculator');
 if (promoGrid && rateCalculator && promoGrid.parentNode) {
   promoGrid.parentNode.insertBefore(rateCalculator, promoGrid.nextSibling);
 }
+if (rateCalculator) {
+  rateCalculator.classList.add('calculator-popout');
+  const closeCalculator = document.createElement('button');
+  closeCalculator.className = 'calculator-popout-close';
+  closeCalculator.type = 'button';
+  closeCalculator.setAttribute('aria-label', 'Close calculator');
+  closeCalculator.textContent = '×';
+  rateCalculator.prepend(closeCalculator);
+  const openCalculator = event => {
+    if (event) event.preventDefault();
+    rateCalculator.classList.add('is-open');
+    document.body.classList.add('calculator-is-open');
+  };
+  const hideCalculator = () => {
+    rateCalculator.classList.remove('is-open');
+    document.body.classList.remove('calculator-is-open');
+  };
+  document.querySelectorAll('[data-open-calculator], a[href="#calculator"]').forEach(link => link.addEventListener('click', openCalculator));
+  closeCalculator.addEventListener('click', hideCalculator);
+  rateCalculator.addEventListener('click', event => { if (event.target === rateCalculator) hideCalculator(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') hideCalculator(); });
+}
 
 const directoryData = {
   all: { label:'ALL PLATFORMS', title:'Popular services, clearly grouped.', description:'Select a platform to see the service types available and their usual delivery window.', services:[['Facebook','Followers · reacts · views','Usually 1–3 days'],['Instagram','Followers · likes · views','Usually 1–3 days'],['TikTok','Followers · likes · views','Usually 1–3 days'],['YouTube','Subscribers · watch hours · views','Usually 2–5 days'],['X / Twitter','Followers · likes · impressions','Minutes–hours']] },
@@ -82,3 +104,12 @@ launcher.addEventListener('click', () => toggleChat(!chat.classList.contains('op
 closeChat.addEventListener('click', () => toggleChat(false));
 document.querySelectorAll('[data-question]').forEach(button => button.addEventListener('click', () => { addMessage(button.dataset.question, 'user'); reply(button.dataset.question); }));
 chatForm.addEventListener('submit', event => { event.preventDefault(); const question = chatInput.value.trim(); if (!question) return; addMessage(question, 'user'); chatInput.value = ''; reply(question); });
+
+// The goal dashboard was removed from the current homepage design.
+const goalDashboard = document.querySelector('#choose-goal');
+if (goalDashboard) goalDashboard.remove();
+const browseServicesLink = document.querySelector('.hero-actions .button-quiet');
+if (browseServicesLink) {
+  browseServicesLink.href = '#services';
+  browseServicesLink.textContent = 'Browse services';
+}

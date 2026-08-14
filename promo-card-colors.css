@@ -1,0 +1,59 @@
+/* A calmer, platform-led colour system for the promo cards. */
+.promo-first-grid .service-card,
+.promo-first-grid .service-card[data-platform="facebook"]:not(.featured),
+.promo-first-grid .service-card[data-platform="instagram"],
+.promo-first-grid .service-card[data-platform="tiktok"],
+.promo-first-grid .service-card[data-platform="youtube"] {
+  border-color: #d9e5f5;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(21, 55, 99, .06);
+}
+
+.promo-first-grid .service-card.featured {
+  background: #ffffff;
+  border: 2px solid #1769db;
+  box-shadow: 0 13px 26px rgba(23, 105, 219, .13);
+}
+
+.promo-first-grid .service-card.featured .service-icon {
+  box-shadow: none;
+}
+
+.promo-first-grid .service-card.featured .promo-badge {
+  background: #ffd13d;
+  color: #3b2b00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+}
+
+.promo-first-grid .service-card.featured h3,
+.promo-first-grid .service-card.featured p,
+.promo-first-grid .service-card.featured small,
+.promo-first-grid .service-card.featured button,
+.promo-first-grid .service-card.featured button b,
+.promo-first-grid .service-card.featured .currency-price,
+.promo-first-grid .service-card.featured .currency-price:before,
+.promo-first-grid .service-card.featured small:before {
+  color: inherit;
+}
+
+.promo-first-grid .service-card.featured h3,
+.promo-first-grid .service-card.featured button { color: #10234c; }
+.promo-first-grid .service-card.featured p,
+.promo-first-grid .service-card.featured small { color: #65718a; }
+.promo-first-grid .service-card.featured .currency-price { color: #1266dc; }
+.promo-first-grid .service-card.featured button { border-color: #dbe7f5; }
+
+.promo-first-grid .service-card .promo-badge {
+  background: #ffdb51;
+  color: #463400;
+  border: 1px solid rgba(199, 143, 0, .08);
+}
+
+.promo-first-grid .service-card:not(.featured) .currency-price {
+  color: #1266dc;
+}
+
+.promo-first-grid .service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px rgba(21, 55, 99, .12);
+}
