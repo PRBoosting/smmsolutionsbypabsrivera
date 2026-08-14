@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="reviews.css" />
     <link rel="stylesheet" href="ui-refresh.css" />
     <link rel="stylesheet" href="promo-first.css" />
+    <link rel="stylesheet" href="promo-floater.css" />
     <!-- Google Analytics: visitor and page-view tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTL26W69X9"></script>
     <script>
@@ -356,9 +357,10 @@
         window.addEventListener('resize', update); update(); restart();
 
         const widget = document.createElement('aside');
-        widget.className = 'best-seller-widget';
-        widget.innerHTML = '<div class="best-seller-widget-top"><span>POPULAR RIGHT NOW</span><button class="best-seller-widget-close" type="button" aria-label="Close best sellers">×</button></div><div class="best-seller-widget-body"><b>Our Best Seller Services</b><p>Facebook Followers, TikTok Views, Instagram Likes, and website creation packages.</p><a href="#services">View popular services <strong>→</strong></a></div>';
-        document.body.append(widget);
+        widget.className = 'best-seller-widget promo-floater-live';
+        widget.setAttribute('aria-label', 'Featured promo package');
+        widget.innerHTML = '<div class="best-seller-widget-top"><span>LIMITED PROMO</span><button class="best-seller-widget-close" type="button" aria-label="Close promotion">×</button></div><div class="best-seller-widget-body"><small>✦ FACEBOOK BOOSTING</small><b>Best-value packages are available now.</b><div class="floater-price"><span>Promo from</span><strong class="currency-price" data-php="680">₱680</strong></div><ul><li>Followers &amp; views packages</li><li>Public links only — no passwords</li><li>Estimated delivery: minutes–hours</li></ul><a href="#services">View promo deals <strong>→</strong></a></div>';
+        window.setTimeout(() => document.body.append(widget), 3500);
         widget.querySelector('.best-seller-widget-close').addEventListener('click', () => widget.remove());
       })();
     </script>
