@@ -98,7 +98,7 @@
   .website-creation{padding-left:20px!important;padding-right:20px!important}.website-creation-intro{display:block!important}
   .website-creation-intro h2{font-size:31px!important;letter-spacing:-1.55px!important}.website-creation-actions{margin-top:18px!important}
   .website-package-list{grid-template-columns:1fr!important}.website-package-list article{min-width:0!important}
-  .website-samples-grid{grid-auto-columns:minmax(260px,82vw)!important}
+  .website-samples-grid{grid-template-columns:1fr!important;grid-auto-columns:auto!important}
 
   .new-features{margin:0 20px!important;grid-template-columns:1fr!important}.new-features-grid{grid-template-columns:1fr!important}
   .process{margin:28px 20px 0!important;padding:20px!important;border-radius:16px!important}

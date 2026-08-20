@@ -1,1 +1,228 @@
-.website-samples{max-width:1124px;margin:0 auto 92px;padding:32px;border:1px solid #d8e4f7;border-radius:24px;background:linear-gradient(135deg,#f9fbff 0%,#f3f7ff 58%,#faf7ff 100%);box-shadow:0 18px 45px #123b7112}.website-samples-heading{display:grid;grid-template-columns:1fr auto;gap:12px 32px;align-items:end;padding:0 4px}.website-samples-heading .eyebrow{grid-column:1/-1;margin:0;color:#1265cf;font:800 10px "Plus Jakarta Sans",sans-serif;letter-spacing:1.45px}.website-samples-heading h3{margin:0;color:#102d61;font:800 clamp(27px,3vw,39px)/1.06 "Plus Jakarta Sans",sans-serif;letter-spacing:-1.9px}.website-samples-heading>p:last-child{max-width:292px;margin:0;color:#62748d;font-size:13px;line-height:1.55}.website-samples-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:25px}.website-sample-card{position:relative;isolation:isolate;display:flex;min-height:196px;flex-direction:column;overflow:hidden;padding:18px;border:1px solid #ffffff5c;border-radius:17px;color:#fff;text-decoration:none;box-shadow:0 9px 22px #17356818;transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}.website-sample-card:hover{transform:translateY(-5px);box-shadow:0 18px 30px #112f652b;filter:saturate(1.08)}.website-sample-card:before{position:absolute;z-index:-1;top:-74px;right:-58px;width:160px;height:160px;border:1px solid #fff5;border-radius:50%;content:""}.website-sample-card:after{position:absolute;z-index:-1;right:-35px;bottom:-67px;width:145px;height:145px;border-radius:50%;background:#ffffff19;content:""}.calapure-sample{background:linear-gradient(145deg,#075d50,#20a36e)}.promovox-sample{background:linear-gradient(145deg,#162c70,#3a75db)}.hurray-sample{background:linear-gradient(145deg,#ce5b16,#fba623)}.trive-sample{background:linear-gradient(145deg,#8f1e57,#ee568c)}.mm-lab-sample{background:linear-gradient(145deg,#005d74,#14a6a2)}.koolmate-sample{background:linear-gradient(145deg,#123e95,#3f8ff0)}.lets-bean-sample{background:linear-gradient(145deg,#542b18,#b96e30)}.sample-browser{display:flex;gap:4px;width:max-content;padding:6px 8px;border:1px solid #ffffff45;border-radius:7px;background:#ffffff18}.sample-browser i{display:block;width:5px;height:5px;border-radius:50%;background:#fff9}.sample-type{display:block;margin-top:20px;color:#fffdf0;font:800 8px "Plus Jakarta Sans",sans-serif;letter-spacing:1px}.website-sample-card strong{display:block;margin:7px 0 15px;font:800 21px/1.1 "Plus Jakarta Sans",sans-serif;letter-spacing:-.9px}.website-sample-card small{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:10px;border-top:1px solid #ffffff48;font-size:10px;font-weight:800}.website-sample-card small b{display:grid;width:24px;height:24px;place-items:center;border-radius:50%;background:#ffffff22;font-size:15px;transition:transform .2s ease}.website-sample-card:hover small b{transform:translate(2px,-2px)}@media(max-width:850px){.website-samples-grid{grid-template-columns:repeat(2,1fr)}.website-sample-card{min-height:170px}.website-samples-heading{display:block}.website-samples-heading>p:last-child{margin-top:10px}}@media(max-width:560px){.website-samples{margin:0 16px 64px;padding:24px 18px;border-radius:19px}.website-samples-grid{grid-template-columns:1fr;gap:10px;margin-top:20px}.website-sample-card{min-height:150px;padding:17px}.sample-type{margin-top:15px}.website-sample-card strong{margin:5px 0 10px;font-size:23px}}
+.website-samples {
+  max-width: 1124px;
+  margin: 0 auto 82px;
+  padding: 34px;
+  border: 1px solid #d5e5fb;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #f7fbff 62%, #eef6ff 100%);
+  box-shadow: 0 18px 45px rgba(18, 59, 113, 0.08);
+}
+
+.website-samples-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 330px);
+  gap: 12px 34px;
+  align-items: end;
+  padding: 0 4px;
+}
+
+.website-samples-heading .eyebrow {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #1265cf;
+  font: 800 10px "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 1.45px;
+}
+
+.website-samples-heading h3 {
+  margin: 0;
+  color: #102d61;
+  font: 800 clamp(28px, 3.2vw, 44px) / 1.04 "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -2px;
+}
+
+.website-samples-heading > p:last-child {
+  margin: 0;
+  color: #62748d;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.website-samples-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.website-sample-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #cfe0f6;
+  border-radius: 16px;
+  background: #fff;
+  color: #08265b;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(17, 47, 101, 0.08);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.website-sample-card:hover {
+  transform: translateY(-4px);
+  border-color: #7fb6ff;
+  box-shadow: 0 18px 36px rgba(17, 47, 101, 0.16);
+}
+
+.sample-preview {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid #dce8f8;
+  background: #eef6ff;
+}
+
+.sample-preview::before {
+  position: absolute;
+  z-index: 2;
+  top: 9px;
+  left: 12px;
+  width: 36px;
+  height: 14px;
+  border-radius: 99px;
+  background:
+    radial-gradient(circle at 8px 50%, #8aa1bd 2px, transparent 3px),
+    radial-gradient(circle at 18px 50%, #8aa1bd 2px, transparent 3px),
+    radial-gradient(circle at 28px 50%, #8aa1bd 2px, transparent 3px),
+    rgba(255, 255, 255, 0.88);
+  content: "";
+  box-shadow: 0 2px 8px rgba(8, 38, 91, 0.12);
+}
+
+.sample-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transform: scale(1.01);
+  transition: transform 0.32s ease;
+}
+
+.website-sample-card:hover .sample-preview img {
+  transform: scale(1.045);
+}
+
+.sample-preview-placeholder {
+  display: grid;
+  min-height: 190px;
+  place-items: center;
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(12, 75, 158, 0.92), rgba(9, 41, 97, 0.92)),
+    radial-gradient(circle at 82% 25%, rgba(255, 207, 35, 0.35), transparent 34%);
+  color: #fff;
+}
+
+.sample-preview-placeholder span {
+  display: block;
+  max-width: 230px;
+  font: 800 24px / 1.05 "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.8px;
+}
+
+.sample-preview-placeholder em {
+  display: block;
+  margin-top: 6px;
+  color: #dbeafe;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.sample-copy {
+  display: flex;
+  min-height: 148px;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px 20px 20px;
+}
+
+.sample-type {
+  display: block;
+  color: #1265cf;
+  font: 800 10px "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 1px;
+}
+
+.website-sample-card strong {
+  display: block;
+  margin: 8px 0 18px;
+  color: #08265b;
+  font: 800 23px / 1.08 "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -1px;
+}
+
+.website-sample-card small {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px solid #dce8f8;
+  color: #1265cf;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.website-sample-card small b {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8f2ff;
+  color: #1265cf;
+  font-size: 16px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.website-sample-card:hover small b {
+  transform: translate(2px, -2px);
+  background: #d9ebff;
+}
+
+@media (max-width: 980px) {
+  .website-samples-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .website-samples {
+    margin: 0 16px 64px;
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .website-samples-heading {
+    display: block;
+  }
+
+  .website-samples-heading h3 {
+    font-size: 31px;
+    letter-spacing: -1.5px;
+  }
+
+  .website-samples-heading > p:last-child {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .website-samples-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  .sample-copy {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .website-sample-card strong {
+    font-size: 21px;
+  }
+}
