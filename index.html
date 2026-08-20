@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="promo-floater.css" />
     <link rel="stylesheet" href="calculator-popout.css" />
     <link rel="stylesheet" href="lower-sections-refresh.css" />
+    <link rel="stylesheet" href="upper-hero-refresh.css" />
     <!-- Google Analytics: visitor and page-view tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTL26W69X9"></script>
     <script>
@@ -42,38 +43,80 @@
     <header class="site-header">
       <a class="brand brand-logo" href="#top" aria-label="SMM Solutions by Pabs Rivera home"><img src="assets/smm-solutions-logo-large-text.png" alt="SMM Solutions by Pabs Rivera" /></a>
       <button class="menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
-      <nav aria-label="Main navigation"><a href="#services">Services</a><a class="website-nav-link" href="#website-samples">Websites <span>NEW</span></a><a class="marketplace-link" href="https://smm-solutions-marketplace-b9888.web.app">Buy &amp; Sell</a><a class="creator-community-link" href="creator-community.html">Creator Hub <span>NEW</span></a><a class="vip-reseller-link" href="vip-reseller.html">VIP Resellers <span>NEW</span></a><button class="nav-link-button" type="button" data-dialog="order-lookup">Track order</button><a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScyaMF0jMytzyNUKlN-bSIbnXONpPikQS47NKEXNJ58gSCv9g/viewform?usp=publish-editor">Order now ↗</a></nav>
+      <nav aria-label="Main navigation"><a href="#services">Services</a><a class="website-nav-link" href="#website-samples">Websites <span>NEW</span></a><a class="marketplace-link" href="https://smm-solutions-marketplace-b9888.web.app">Buy &amp; Sell <span>NEW</span></a><a class="creator-community-link" href="creator-community.html">Creator Hub <span>NEW</span></a><a class="vip-reseller-link" href="vip-reseller.html">VIP Resellers <span>NEW</span></a><button class="nav-link-button" type="button" data-dialog="order-lookup">Track order</button><a class="nav-cta" href="https://m.me/smmsolutionsv2" target="_blank" rel="noreferrer">Get a Quote →</a></nav>
     </header>
 
-    <div class="promo-ribbon" role="note"><span>LIMITED PROMO PACKAGES</span><b>Better-value bundles are available now.</b><a href="#services">View deals</a></div>
-
-    <section class="site-announcements" aria-label="What is new at SMM Solutions">
-      <div class="announcement-title"><span>✦</span><div><b>WHAT’S NEW</b><small>More ways to order, share, and explore.</small></div></div>
-      <a href="https://smm-solutions-marketplace-b9888.web.app" class="announcement-item"><b>Marketplace</b><span>Buy, sell &amp; hire →</span></a>
-      <button type="button" class="announcement-item" data-dialog="qr-maker"><b>Free QR Maker</b><span>Create a QR code →</span></button>
-      <a href="#calculator" class="announcement-item"><b>Quick Custom Quote</b><span>Calculate regular rates →</span></a>
-      <a href="#services" class="announcement-item"><b>Faster estimates</b><span>Minutes–hours available →</span></a>
-    </section>
+    <div class="promo-ribbon upper-promo-ribbon" role="note"><span>🏷️ LIMITED PROMO PACKAGES</span><b>Better-value bundles are available now.</b><a href="#services">View deals →</a></div>
 
     <main id="top">
-      <section class="hero">
+      <section class="hero upper-hero">
         <div class="hero-copy">
           <p class="eyebrow">SOCIAL GROWTH &amp; WEBSITE SERVICES</p>
           <h1>Everything you need<br />to <span>grow with clarity.</span></h1>
           <p class="hero-text">Boost your social presence, build a professional website, and access useful tools—all in one straightforward platform.</p>
-          <div class="hero-actions"><a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScyaMF0jMytzyNUKlN-bSIbnXONpPikQS47NKEXNJ58gSCv9g/viewform?usp=publish-editor" target="_blank" rel="noreferrer">Start my order <span>→</span></a><a class="button button-quiet" href="#services">Choose my service</a></div>
-          <button class="order-lookup-link" type="button" data-dialog="order-lookup">Already ordered? Track your Order ID →</button>
+          <div class="hero-actions"><a class="button button-primary" href="#services">Explore services <span>→</span></a><a class="button button-quiet" href="https://m.me/smmsolutionsv2" target="_blank" rel="noreferrer">💬 Get a Quote</a></div>
+          <button class="order-lookup-link" type="button" data-dialog="order-lookup">Already ordered? Track your order →</button>
         </div>
-        <aside class="hero-service-summary" aria-label="SMM Solutions service overview">
-          <div class="summary-head"><span>SMM SOLUTIONS</span><b>What we can help with</b></div>
-          <a href="#services"><i>01</i><div><small>Social media growth</small><strong>Platform packages &amp; custom requests</strong></div><b>→</b></a>
-          <a href="#website-creation"><i>02</i><div><small>Website creation</small><strong>Business websites from <span class="currency-price" data-php="1299">₱1,299</span></strong></div><b>→</b></a>
-          <a href="#features"><i>03</i><div><small>Customer features</small><strong>Tools, calculator, marketplace &amp; more</strong></div><b>→</b></a>
-          <p>Choose a goal, see the options, then order with confidence.</p>
+        <aside class="hero-feature-carousel" aria-label="Featured SMM Solutions options">
+          <div class="hero-feature-slide active" data-hero-slide>
+            <div class="hero-feature-copy">
+              <p class="eyebrow">SOCIAL MEDIA GROWTH</p>
+              <h2>Reach more people with your content.</h2>
+              <p>Explore platform promos for followers, views, engagement, and more.</p>
+              <a class="button button-primary" href="#services">View growth packages <span>→</span></a>
+            </div>
+            <img src="assets/facebook-packages.png" alt="Facebook boosting promo packages" loading="eager" />
+          </div>
+          <div class="hero-feature-slide" data-hero-slide>
+            <div class="hero-feature-copy">
+              <p class="eyebrow">WEBSITE CREATION</p>
+              <h2>Professional websites from <span class="currency-price" data-php="1299">₱1,299</span>.</h2>
+              <p>Mobile-friendly business websites with clear sections, links, and inquiry flow.</p>
+              <a class="button button-primary" href="#website-samples">See website samples <span>→</span></a>
+            </div>
+            <img src="assets/website-promos/websites-made-affordable.png" alt="Professional websites made affordable" loading="lazy" />
+          </div>
+          <div class="hero-feature-slide" data-hero-slide>
+            <div class="hero-feature-copy">
+              <p class="eyebrow">FREE CUSTOMER TOOLS</p>
+              <h2>QR maker, link cards, and fast estimates.</h2>
+              <p>Useful tools for customers who want quick links, cleaner sharing, and regular-rate estimates.</p>
+              <button class="button button-primary" type="button" data-dialog="qr-maker">Open tools <span>→</span></button>
+            </div>
+            <img src="assets/website-addons-menu-v2.png" alt="SMM Solutions customer tools and add-ons" loading="lazy" />
+          </div>
+          <div class="hero-feature-controls" aria-label="Hero carousel controls">
+            <div class="hero-feature-dots">
+              <button class="active" type="button" aria-label="Show social media growth slide"></button>
+              <button type="button" aria-label="Show website creation slide"></button>
+              <button type="button" aria-label="Show customer tools slide"></button>
+            </div>
+            <div class="hero-feature-arrows">
+              <button type="button" data-hero-prev aria-label="Previous feature">‹</button>
+              <button type="button" data-hero-next aria-label="Next feature">›</button>
+            </div>
+          </div>
         </aside>
       </section>
 
-      <section class="calculator" id="calculator">
+      <section class="goal-launchpad" id="choose-goal" aria-label="Choose what you need today">
+        <p class="eyebrow">WHAT DO YOU NEED TODAY?</p>
+        <div class="goal-cards">
+          <a href="#services"><span>📈</span><strong>Social Growth</strong><small>Boost followers, views, likes and engagement.</small><b>Explore packages →</b></a>
+          <a href="#website-samples"><span>🌐</span><strong>Build a Website</strong><small>Professional websites for your business.</small><b>View website plans →</b></a>
+          <a href="https://smm-solutions-marketplace-b9888.web.app"><span>🛒</span><strong>Marketplace</strong><small>Buy, sell and hire with ease.</small><b>Browse marketplace →</b></a>
+          <button type="button" data-dialog="qr-maker"><span>▦</span><strong>QR &amp; Tools</strong><small>Free QR maker, link fixer, and more.</small><b>Open tools →</b></button>
+          <a href="#services"><span>⚡</span><strong>Fast Estimates</strong><small>Minutes–hours estimates available.</small><b>Get estimate →</b></a>
+        </div>
+        <div class="upper-trust-strip" aria-label="SMM Solutions trust highlights">
+          <div><span>✓</span><strong>Trusted by thousands</strong><small>Satisfied customers nationwide</small></div>
+          <div><span>☏</span><strong>Fast &amp; reliable support</strong><small>We’re here when you need us</small></div>
+          <div><span>🔒</span><strong>Secure transactions</strong><small>Safe and worry-free</small></div>
+          <div><span>✦</span><strong>Quality guaranteed</strong><small>Results that help you grow</small></div>
+        </div>
+      </section>
+
+      <section class="calculator" id="calculator" hidden>
         <div class="calculator-copy"><p class="eyebrow">QUICK CUSTOM QUOTE</p><h2>Need a different amount?</h2><p>Get a regular-rate estimate in a few taps. Promo packages below are still the better-value choice.</p><div class="calculator-note">Regular rates · instant estimate · no password needed</div></div>
         <form class="calculator-card" id="rate-calculator">
           <label>Platform<select id="calc-platform" aria-label="Platform"></select></label>
@@ -218,6 +261,43 @@
     <script src="calculator.js"></script>
     <script src="currency.js"></script>
     <script src="script.js"></script>
+    <script>
+      (() => {
+        const carousel = document.querySelector('.hero-feature-carousel');
+        if (!carousel) return;
+        const slides = [...carousel.querySelectorAll('[data-hero-slide]')];
+        const dots = [...carousel.querySelectorAll('.hero-feature-dots button')];
+        const prev = carousel.querySelector('[data-hero-prev]');
+        const next = carousel.querySelector('[data-hero-next]');
+        let current = 0;
+        let timer;
+
+        const show = index => {
+          current = (index + slides.length) % slides.length;
+          slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+          dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+        };
+
+        const restart = () => {
+          clearInterval(timer);
+          timer = setInterval(() => show(current + 1), 10000);
+        };
+
+        dots.forEach((dot, index) => dot.addEventListener('click', () => {
+          show(index);
+          restart();
+        }));
+        prev?.addEventListener('click', () => {
+          show(current - 1);
+          restart();
+        });
+        next?.addEventListener('click', () => {
+          show(current + 1);
+          restart();
+        });
+        restart();
+      })();
+    </script>
     <script src="hero-summary-carousel.js"></script>
     <script type="module" src="ai-chat.js"></script>
     <script src="extras.js"></script>
