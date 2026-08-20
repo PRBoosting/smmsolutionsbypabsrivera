@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="calculator-popout.css" />
     <link rel="stylesheet" href="lower-sections-refresh.css" />
     <link rel="stylesheet" href="upper-hero-refresh.css" />
+    <link rel="stylesheet" href="live-samples-refresh.css" />
     <!-- Google Analytics: visitor and page-view tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTL26W69X9"></script>
     <script>
@@ -176,41 +177,72 @@
           <article><img src="assets/website-promos/beauty-business.png" alt="Beauty Business website package promo" loading="lazy" /><div><p>BEAUTY BUSINESS</p><h3 class="currency-price" data-php="1499">₱1,499</h3><span>Service menu, gallery & booking button</span></div></article>
           <article class="website-features-card"><img src="assets/website-promos/features-included.png" alt="Website package features included" loading="lazy" /><div><p>EVERY PACKAGE</p><h3>Built to launch</h3><span>Hosting, mobile-ready design and Messenger integration.</span></div></article>
         </div>
-        <section class="website-samples" id="website-samples" aria-labelledby="website-samples-title">
-          <div class="website-samples-heading">
-            <p class="eyebrow">LIVE WEBSITE SAMPLES</p>
-            <h3 id="website-samples-title">Websites we have built for real businesses.</h3>
-            <p>Open a live sample to see how a business website can look and work.</p>
+        <section class="website-samples live-samples-refresh" id="website-samples" aria-labelledby="website-samples-title">
+          <div class="live-samples-heading">
+            <div>
+              <p class="eyebrow live-samples-eyebrow"><span></span>LIVE WEBSITE SAMPLES</p>
+              <h3 id="website-samples-title">Websites we’ve built<br />for <strong>real businesses.</strong></h3>
+              <p>Take a look at some of our recent projects. Each one is built to help businesses grow online.</p>
+            </div>
+            <aside class="live-samples-note" aria-label="Live sample note">
+              <span>↗</span>
+              <p>Open a live sample to see how a business website can look and work.</p>
+            </aside>
           </div>
-          <div class="website-samples-grid">
-            <a class="website-sample-card" href="https://calapureph.netlify.app/" target="_blank" rel="noreferrer">
+
+          <div class="live-sample-tabs" aria-label="Filter website samples">
+            <button class="active" type="button" data-sample-filter="all">▦ All Projects</button>
+            <button type="button" data-sample-filter="business">▣ Business</button>
+            <button type="button" data-sample-filter="ecommerce">🛒 E-Commerce</button>
+            <button type="button" data-sample-filter="service">⚙ Service</button>
+            <button type="button" data-sample-filter="beauty">✦ Beauty</button>
+            <button type="button" data-sample-filter="laboratory">⚗ Laboratory</button>
+            <button type="button" data-sample-filter="food">☕ Food & Beverage</button>
+            <span class="live-sample-count">7 Live Websites</span>
+          </div>
+
+          <div class="website-samples-grid live-samples-grid">
+            <a class="website-sample-card" data-sample-category="ecommerce" href="https://calapureph.netlify.app/" target="_blank" rel="noreferrer">
               <span class="sample-preview"><img src="assets/live-samples/calapure-preview.png" alt="CalaPure PH website preview" loading="lazy" /></span>
               <span class="sample-copy"><span class="sample-type">PRODUCT WEBSITE</span><strong>CalaPure PH</strong><small>Visit live website <b>&nearr;</b></small></span>
             </a>
-            <a class="website-sample-card" href="https://promovoxsolutions.netlify.app/" target="_blank" rel="noreferrer">
+            <a class="website-sample-card" data-sample-category="business" href="https://promovoxsolutions.netlify.app/" target="_blank" rel="noreferrer">
               <span class="sample-preview"><img src="assets/live-samples/promovox-preview.png" alt="PromoVox Solutions website preview" loading="lazy" /></span>
               <span class="sample-copy"><span class="sample-type">BUSINESS WEBSITE</span><strong>PromoVox Solutions</strong><small>Visit live website <b>&nearr;</b></small></span>
             </a>
-            <a class="website-sample-card" href="https://novast-arch.github.io/hurraydeliveryservice/" target="_blank" rel="noreferrer">
+            <a class="website-sample-card" data-sample-category="service" href="https://novast-arch.github.io/hurraydeliveryservice/" target="_blank" rel="noreferrer">
               <span class="sample-preview"><img src="assets/live-samples/hurray-preview.png" alt="Hurray Delivery Service website preview" loading="lazy" /></span>
               <span class="sample-copy"><span class="sample-type">DELIVERY SERVICE WEBSITE</span><strong>Hurray Delivery Service</strong><small>Visit live website <b>&nearr;</b></small></span>
             </a>
-            <a class="website-sample-card" href="https://trivebeautylounge.com/" target="_blank" rel="noreferrer">
+            <a class="website-sample-card" data-sample-category="beauty" href="https://trivebeautylounge.com/" target="_blank" rel="noreferrer">
               <span class="sample-preview"><img src="assets/live-samples/trive-preview.png" alt="Trive Beauty Lounge website preview" loading="lazy" /></span>
               <span class="sample-copy"><span class="sample-type">BEAUTY BUSINESS WEBSITE</span><strong>Trive Beauty Lounge</strong><small>Visit live website <b>&nearr;</b></small></span>
             </a>
-            <a class="website-sample-card" href="https://mmlaboratorysupplies.netlify.app/" target="_blank" rel="noreferrer">
+            <a class="website-sample-card" data-sample-category="laboratory" href="https://mmlaboratorysupplies.netlify.app/" target="_blank" rel="noreferrer">
               <span class="sample-preview"><img src="assets/live-samples/mmlab-preview.png" alt="MM Laboratory Supplies website preview" loading="lazy" /></span>
               <span class="sample-copy"><span class="sample-type">LABORATORY SUPPLIES WEBSITE</span><strong>MM Laboratory Supplies</strong><small>Visit live website <b>&nearr;</b></small></span>
             </a>
-            <a class="website-sample-card" href="https://koolmate.netlify.app/" target="_blank" rel="noreferrer">
+            <a class="website-sample-card" data-sample-category="business" href="https://koolmate.netlify.app/" target="_blank" rel="noreferrer">
               <span class="sample-preview"><img src="assets/live-samples/koolmate-preview.png" alt="KoolMate website preview" loading="lazy" /></span>
               <span class="sample-copy"><span class="sample-type">BUSINESS WEBSITE</span><strong>KoolMate</strong><small>Visit live website <b>&nearr;</b></small></span>
             </a>
-            <a class="website-sample-card" href="https://lets-beancoffee.netlify.app/" target="_blank" rel="noreferrer">
-              <span class="sample-preview sample-preview-placeholder"><span>Let's Bean Coffee</span><em>Live website sample</em></span>
+            <a class="website-sample-card" data-sample-category="food" href="https://lets-beancoffee.netlify.app/" target="_blank" rel="noreferrer">
+              <span class="sample-preview"><img src="assets/live-samples/lets-bean-preview.svg" alt="Let's Bean Coffee website preview" loading="lazy" /></span>
               <span class="sample-copy"><span class="sample-type">COFFEE SHOP WEBSITE</span><strong>Let's Bean Coffee</strong><small>Visit live website <b>&nearr;</b></small></span>
             </a>
+            <article class="website-sample-card live-samples-cta" data-sample-category="all">
+              <span class="cta-icon">☆</span>
+              <h4>Your website could be next!</h4>
+              <p>Let’s build something amazing together.</p>
+              <a href="https://m.me/smmsolutionsv2" target="_blank" rel="noreferrer">Start a Project <b>→</b></a>
+            </article>
+          </div>
+
+          <div class="live-samples-benefits" aria-label="Website sample benefits">
+            <div><span>✎</span><strong>Custom Design</strong><small>Tailored to your brand and business goals.</small></div>
+            <div><span>▯</span><strong>Mobile Responsive</strong><small>Looks perfect on all devices and screen sizes.</small></div>
+            <div><span>盾</span><strong>Secure & Reliable</strong><small>Built with security and performance in mind.</small></div>
+            <div><span>◷</span><strong>Fast Turnaround</strong><small>Typical delivery time: 2–5 business days.</small></div>
           </div>
         </section>
         <p class="website-creation-note">Every package includes a custom setup using your own business details, photos, and logo. Typical delivery: 2–5 days after we receive your content.</p>
@@ -392,6 +424,25 @@
         form.elements.image.addEventListener('change', event => { const file = event.target.files[0]; if (!file) { image = null; draw(); return; } const reader = new FileReader(); reader.onload = () => { image = new Image(); image.onload = draw; image.src = reader.result; }; reader.readAsDataURL(file); });
         form.addEventListener('submit', event => { event.preventDefault(); draw(); });
         dialog.querySelector('.download-card').addEventListener('click', () => { draw(); const link = document.createElement('a'); link.download = 'smm-solutions-link-card.png'; link.href = canvas.toDataURL('image/png'); link.click(); });
+      })();
+    </script>
+    <script>
+      (() => {
+        const sampleSection = document.querySelector('.live-samples-refresh');
+        if (!sampleSection) return;
+        const buttons = Array.from(sampleSection.querySelectorAll('[data-sample-filter]'));
+        const cards = Array.from(sampleSection.querySelectorAll('[data-sample-category]'));
+        buttons.forEach(button => {
+          button.addEventListener('click', () => {
+            const filter = button.dataset.sampleFilter;
+            buttons.forEach(item => item.classList.toggle('active', item === button));
+            cards.forEach(card => {
+              const category = card.dataset.sampleCategory;
+              const show = filter === 'all' || category === 'all' || category === filter;
+              card.classList.toggle('sample-hidden', !show);
+            });
+          });
+        });
       })();
     </script>
     <script src="qr.js"></script>
