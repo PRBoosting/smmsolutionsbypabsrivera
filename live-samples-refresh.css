@@ -239,10 +239,10 @@
 
 .live-samples-benefits {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(4, minmax(190px, 1fr));
+  gap: 0;
   margin-top: 28px;
-  padding: 18px;
+  padding: 18px 20px;
   border: 1px solid #d4e3f8;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.76);
@@ -251,10 +251,11 @@
 
 .live-samples-benefits div {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 13px;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 14px;
   align-items: center;
-  padding-right: 16px;
+  min-width: 0;
+  padding: 4px 18px;
   border-right: 1px solid #dbe8f8;
 }
 
@@ -264,14 +265,19 @@
 
 .live-samples-benefits span {
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   place-items: center;
   border-radius: 50%;
-  background: #1265cf;
+  background: linear-gradient(135deg, #0a6ff0, #074aa2);
   color: #fff;
   box-shadow: 0 10px 18px rgba(18, 101, 207, 0.22);
-  font-weight: 900;
+  font: 900 18px "Plus Jakarta Sans", sans-serif;
+}
+
+.live-samples-benefits p {
+  min-width: 0;
+  margin: 0;
 }
 
 .live-samples-benefits strong {
@@ -314,10 +320,16 @@
 
   .live-samples-benefits {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
-  .live-samples-benefits div:nth-child(2) {
+  .live-samples-benefits div,
+  .live-samples-benefits div:nth-child(2),
+  .live-samples-benefits div:last-child {
     border-right: 0;
+    border: 1px solid #dbe8f8;
+    border-radius: 16px;
+    padding: 14px;
   }
 }
 
@@ -380,12 +392,13 @@
   .live-samples-benefits div,
   .live-samples-benefits div:nth-child(2) {
     border-right: 0;
-    border-bottom: 1px solid #dbe8f8;
-    padding: 0 0 12px;
+    border: 1px solid #dbe8f8;
+    border-radius: 16px;
+    padding: 13px;
   }
 
   .live-samples-benefits div:last-child {
-    border-bottom: 0;
-    padding-bottom: 0;
+    border: 1px solid #dbe8f8;
+    padding: 13px;
   }
 }
