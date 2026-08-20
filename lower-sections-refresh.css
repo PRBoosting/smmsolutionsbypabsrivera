@@ -33,7 +33,7 @@
 .process li p{font-size:10px;line-height:1.42;color:#c9dcf7}
 
 /* Trust information and client feedback sit together as one compact row. */
-.trust-feedback-wrap{max-width:1124px;margin:40px auto 26px;display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
+.trust-feedback-wrap{max-width:1124px;margin:34px auto 26px;display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
 .trust-feedback-wrap .about{display:block;margin:0;padding:0}
 .trust-feedback-wrap .about h2{font-size:29px;letter-spacing:-1.7px}
 .trust-feedback-wrap .about>div>p:not(.eyebrow){margin:15px 0;font-size:13px;line-height:1.55}
@@ -48,6 +48,30 @@
 .trust-feedback-wrap .review-card{min-height:128px;padding:14px;border-radius:11px}.trust-feedback-wrap .review-service{font-size:8px}.trust-feedback-wrap .review-top{font-size:10px}.trust-feedback-wrap blockquote{font-size:11px;line-height:1.45;margin:12px 0}.trust-feedback-wrap .review-card footer{padding:0;font-size:10px}.trust-feedback-wrap .review-card footer small{font-size:9px}
 .trust-feedback-wrap .reviews-link{display:inline-block;margin-top:13px;font-size:11px;color:#1769db;font-weight:800}
 
+.quote-inquiry{
+  max-width:1124px;
+  margin:42px auto 0;
+  padding:30px;
+  display:grid;
+  grid-template-columns:minmax(230px,.85fr) minmax(320px,1.15fr);
+  gap:28px;
+  align-items:start;
+  border:1px solid #cfe0f5;
+  border-radius:24px;
+  background:linear-gradient(135deg,#f7fbff,#fff 55%,#fff8dc);
+  box-shadow:0 22px 48px rgba(8,39,91,.08);
+}
+.quote-inquiry-copy h2{margin:8px 0 12px;color:#071f4d;font-size:36px;line-height:1.02;letter-spacing:-1.8px}
+.quote-inquiry-copy p{margin:0 0 16px;color:#536786;font-size:15px;line-height:1.6}
+.quote-note{display:inline-flex;padding:9px 12px;border:1px solid #cfe0f5;border-radius:999px;background:#fff;color:#1769db;font-size:12px;font-weight:800}
+.quote-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.quote-form label{display:grid;gap:7px;color:#071f4d;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.quote-form input,.quote-form select,.quote-form textarea{width:100%;box-sizing:border-box;border:1px solid #c8d9ef;border-radius:12px;background:#fff;padding:12px 13px;color:#071f4d;font:700 14px/1.35 inherit;outline:none}
+.quote-form textarea{min-height:104px;resize:vertical}
+.quote-form label:nth-child(3){grid-column:1/-1}
+.quote-form button{grid-column:1/-1;justify-content:center;border:0;cursor:pointer}
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{border-color:#1769db;box-shadow:0 0 0 4px rgba(23,105,219,.12)}
+
 @media(max-width:760px){
   .brand-logo img{width:126px;height:45px}footer .brand-logo img{width:122px;height:43px}
   .service-showcase .showcase-twitter,.service-showcase .showcase-calculator{grid-column:auto}
@@ -56,8 +80,12 @@
   .process h2{font-size:27px}.process ol{margin:17px 0 0;grid-template-columns:1fr;gap:7px}
   .process li{padding:11px 0;border-left:0;border-top:1px solid rgba(255,255,255,.17)}
   .process li:first-child{border-top:0}.process li:not(:last-child):after{display:none}
-  .trust-feedback-wrap{display:block;margin:36px 24px 52px}.trust-feedback-wrap .client-reviews{margin-top:38px;padding-left:0;border-left:0}
+  .trust-feedback-wrap{display:block;margin:28px 24px 44px}.trust-feedback-wrap .client-reviews{margin-top:38px;padding-left:0;border-left:0}
   .trust-feedback-wrap .reviews-grid{grid-template-columns:1fr}.trust-feedback-wrap .values{grid-template-columns:repeat(2,1fr)}
+  .quote-inquiry{grid-template-columns:1fr;margin:30px 24px 0;padding:22px;border-radius:20px}
+  .quote-inquiry-copy h2{font-size:30px}
+  .quote-form{grid-template-columns:1fr}
+  .quote-note{border-radius:14px;line-height:1.35}
 }
 
 /* Keep the FAQ close to the feedback section instead of leaving an empty page-sized gap. */
@@ -100,7 +128,7 @@
   .website-package-list{grid-template-columns:1fr!important}.website-package-list article{min-width:0!important}
   .website-samples-grid{grid-template-columns:1fr!important;grid-auto-columns:auto!important}
 
-  .new-features{margin:0 20px!important;grid-template-columns:1fr!important}.new-features-grid{grid-template-columns:1fr!important}
+  .new-features{margin:0 20px 24px!important;grid-template-columns:1fr!important}.new-features-grid{grid-template-columns:1fr!important}
   .process{margin:28px 20px 0!important;padding:20px!important;border-radius:16px!important}
   .process h2{font-size:27px!important}.process ol{margin-top:15px!important}.process li{grid-template-columns:38px 1fr!important;gap:10px!important}
   .process li strong{width:36px!important;height:36px!important;font-size:15px!important}.process li p{font-size:10px!important}
@@ -114,7 +142,10 @@
 
   .faq{display:grid!important;grid-template-columns:1fr!important;gap:17px!important;margin:0 20px!important;padding-top:18px!important}.faq h2{font-size:31px!important;letter-spacing:-1.55px!important}
   .faq details{padding:15px!important}.faq summary{font-size:13px!important}.faq details p{font-size:12px!important;line-height:1.55!important}
-  .contact{margin-left:20px!important;margin-right:20px!important;padding:28px 20px!important}.contact h2{font-size:30px!important}
+  .quote-inquiry{grid-template-columns:1fr!important;margin:30px 20px 0!important;padding:22px!important;border-radius:20px!important}
+  .quote-inquiry-copy h2{font-size:30px!important}
+  .quote-form{grid-template-columns:1fr!important}
+  .quote-note{border-radius:14px!important;line-height:1.35!important}
   footer{margin-left:20px!important;margin-right:20px!important;padding:24px 0!important;gap:16px!important;flex-wrap:wrap!important}.footer-links{gap:10px!important}
 }
 
