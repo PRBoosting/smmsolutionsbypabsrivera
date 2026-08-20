@@ -6,6 +6,149 @@
   --upper-border: #cfe0f7;
 }
 
+/* CTA + promo polish requested for the current homepage */
+.site-header .nav-cta {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b63df, #0847b7) !important;
+  box-shadow: 0 12px 26px rgba(7, 86, 183, 0.18);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+.site-header .nav-cta::before {
+  content: "";
+  position: absolute;
+  inset: -2px auto -2px -45%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.34), transparent);
+  transform: skewX(-18deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-header .nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(7, 86, 183, 0.26);
+  filter: saturate(1.04);
+}
+
+.site-header .nav-cta:hover::before {
+  animation: quoteButtonShine 0.72s ease;
+}
+
+@keyframes quoteButtonShine {
+  0% {
+    left: -45%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 112%;
+    opacity: 0;
+  }
+}
+
+.upper-hero .button span,
+.hero-feature-slide .button span {
+  display: inline-block;
+  margin-left: 2px;
+  font-size: 1.45em;
+  line-height: 0.8;
+  transition: transform 0.22s ease;
+}
+
+.upper-hero .button:hover span,
+.hero-feature-slide .button:hover span {
+  transform: translateX(4px);
+}
+
+.upper-promo-ribbon {
+  position: relative;
+  overflow: hidden;
+  min-height: 42px;
+  background: linear-gradient(90deg, #ffcf24 0%, #ffdc5e 48%, #ffc014 100%) !important;
+  color: #071f4d !important;
+  border-bottom: 1px solid rgba(7, 31, 77, 0.08);
+  box-shadow: 0 10px 28px rgba(255, 190, 20, 0.18);
+}
+
+.upper-promo-ribbon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -35%;
+  width: 28%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+  transform: skewX(-20deg);
+  animation: promoRibbonSweep 4.5s ease-in-out infinite;
+}
+
+.upper-promo-ribbon > * {
+  position: relative;
+  z-index: 1;
+}
+
+.upper-promo-ribbon span:first-child {
+  color: #071f4d;
+}
+
+.upper-promo-ribbon a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(7, 31, 77, 0.08);
+  color: #071f4d !important;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.upper-promo-ribbon a:hover {
+  background: rgba(7, 31, 77, 0.14);
+  transform: translateX(2px);
+}
+
+.upper-promo-ribbon a span {
+  font-size: 18px;
+  line-height: 0;
+  letter-spacing: 0;
+}
+
+@keyframes promoRibbonSweep {
+  0%,
+  55% {
+    left: -35%;
+  }
+
+  100% {
+    left: 115%;
+  }
+}
+
+.process-heading::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .upper-promo-ribbon {
+    min-height: 38px;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 14px;
+  }
+
+  .upper-promo-ribbon a {
+    padding: 5px 9px;
+  }
+}
+
 html,
 body {
   overflow-x: hidden;
@@ -607,5 +750,135 @@ body {
 
   .upper-trust-strip div:last-child {
     border-bottom: 0;
+  }
+}
+
+/* Final polish overrides for the requested hero/navigation updates */
+.site-header .nav-cta {
+  position: relative !important;
+  overflow: hidden !important;
+  background: linear-gradient(135deg, #0b63df 0%, #0754c9 55%, #063f9f 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 14px 30px rgba(7, 84, 201, 0.22) !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease !important;
+}
+
+.site-header .nav-cta::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -40% auto -40% -70% !important;
+  width: 55% !important;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.34), transparent) !important;
+  transform: skewX(-18deg) !important;
+  pointer-events: none !important;
+}
+
+.site-header .nav-cta:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 18px 38px rgba(7, 84, 201, 0.3) !important;
+  filter: saturate(1.06) !important;
+}
+
+.site-header .nav-cta:hover::before {
+  animation: quoteButtonShineFinal 0.72s ease forwards !important;
+}
+
+@keyframes quoteButtonShineFinal {
+  to {
+    left: 125%;
+  }
+}
+
+.upper-hero .button span,
+.hero-feature-slide .button span {
+  display: inline-block !important;
+  font-size: 1.25em !important;
+  line-height: 0 !important;
+  transform: translateY(1px) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.upper-hero .button:hover span,
+.hero-feature-slide .button:hover span {
+  transform: translate(4px, 1px) !important;
+}
+
+.upper-promo-ribbon {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background: linear-gradient(90deg, #ffca1c 0%, #ffd84d 48%, #ffc400 100%) !important;
+  color: #061b42 !important;
+  border-bottom: 1px solid rgba(159, 111, 0, 0.16) !important;
+  box-shadow: 0 10px 26px rgba(255, 196, 0, 0.22) !important;
+}
+
+.upper-promo-ribbon::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.32) 40%, transparent 70%) !important;
+  transform: translateX(-100%) !important;
+  animation: promoRibbonSweepFinal 5.5s ease-in-out infinite !important;
+  z-index: -1 !important;
+}
+
+.upper-promo-ribbon strong {
+  letter-spacing: 0.12em !important;
+}
+
+.upper-promo-ribbon a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: #061b42 !important;
+  text-decoration: none !important;
+  border-bottom: 2px solid #061b42 !important;
+  padding-bottom: 2px !important;
+  transition: transform 0.18s ease, opacity 0.18s ease !important;
+}
+
+.upper-promo-ribbon a:hover {
+  transform: translateX(3px) !important;
+  opacity: 0.82 !important;
+}
+
+.upper-promo-ribbon a span {
+  font-size: 1.28em !important;
+  line-height: 0 !important;
+}
+
+@keyframes promoRibbonSweepFinal {
+  0%,
+  46% {
+    transform: translateX(-110%);
+  }
+  72%,
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+.process-heading:after,
+.process-heading::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .upper-promo-ribbon {
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 11px 14px !important;
+    text-align: center !important;
+  }
+
+  .upper-promo-ribbon strong {
+    width: 100% !important;
+    font-size: 0.72rem !important;
+  }
+
+  .upper-promo-ribbon a {
+    margin-left: 0 !important;
   }
 }
