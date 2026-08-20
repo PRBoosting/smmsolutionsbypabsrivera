@@ -79,8 +79,8 @@ const chat = document.querySelector('.chat-widget');
 const closeChat = document.querySelector('.chat-close');
 const messages = document.querySelector('.chat-messages');
 const chatForm = document.querySelector('.chat-form');
-const chatInput = chatForm.querySelector('input');
-function toggleChat(open) { chat.classList.toggle('open', open); chat.setAttribute('aria-hidden', !open); launcher.setAttribute('aria-expanded', open); if (open) chatInput.focus(); }
+const chatInput = chatForm ? chatForm.querySelector('input') : null;
+function toggleChat(open) { chat.classList.toggle('open', open); chat.setAttribute('aria-hidden', !open); launcher.setAttribute('aria-expanded', open); if (open && chatInput) chatInput.focus(); }
 function addMessage(text, type) { const message = document.createElement('div'); message.className = `message ${type}`; message.textContent = text; messages.append(message); messages.scrollTop = messages.scrollHeight; }
 async function reply(question) {
   if (typeof window.askSmmAssistant === 'function') {
@@ -100,10 +100,12 @@ async function reply(question) {
   if (text.includes('safe') || text.includes('legit') || text.includes('password')) answer = 'For boosting, we only ask for a public link to the profile, account, post, or video—never a password or login detail.';
   setTimeout(() => addMessage(answer, 'bot'), 280);
 }
-launcher.addEventListener('click', () => toggleChat(!chat.classList.contains('open')));
-closeChat.addEventListener('click', () => toggleChat(false));
-document.querySelectorAll('[data-question]').forEach(button => button.addEventListener('click', () => { addMessage(button.dataset.question, 'user'); reply(button.dataset.question); }));
-chatForm.addEventListener('submit', event => { event.preventDefault(); const question = chatInput.value.trim(); if (!question) return; addMessage(question, 'user'); chatInput.value = ''; reply(question); });
+if (launcher && chat && closeChat && messages && chatForm && chatInput) {
+  launcher.addEventListener('click', () => toggleChat(!chat.classList.contains('open')));
+  closeChat.addEventListener('click', () => toggleChat(false));
+  document.querySelectorAll('[data-question]').forEach(button => button.addEventListener('click', () => { addMessage(button.dataset.question, 'user'); reply(button.dataset.question); }));
+  chatForm.addEventListener('submit', event => { event.preventDefault(); const question = chatInput.value.trim(); if (!question) return; addMessage(question, 'user'); chatInput.value = ''; reply(question); });
+}
 
 // The goal dashboard was removed from the current homepage design.
 const goalDashboard = document.querySelector('#choose-goal');
