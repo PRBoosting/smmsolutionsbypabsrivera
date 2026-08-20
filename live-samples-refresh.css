@@ -974,12 +974,16 @@
 
 /* Footer, quote spacing, and CTA cleanup */
 #quote-form {
-  margin-bottom: clamp(18px, 3vw, 34px) !important;
+  margin-bottom: clamp(10px, 2vw, 22px) !important;
 }
 
 footer.site-footer {
   display: block !important;
-  margin: 0 !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  width: 100vw !important;
+  margin: 0 -50vw 0 -50vw !important;
   padding: clamp(34px, 5vw, 58px) clamp(22px, 5vw, 72px) 24px !important;
   border-top: 1px solid #c8dcf7 !important;
   background:
@@ -992,16 +996,21 @@ footer.site-footer {
   width: min(1180px, 100%) !important;
   margin: 0 auto !important;
   display: grid !important;
-  grid-template-columns: 1.1fr 0.9fr 1.15fr !important;
-  gap: clamp(26px, 4vw, 56px) !important;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(220px, 0.8fr) minmax(300px, 1fr) !important;
+  gap: clamp(34px, 5vw, 72px) !important;
   align-items: start !important;
 }
 
 .footer-logo {
   display: inline-flex !important;
   align-items: center !important;
-  width: min(260px, 80vw) !important;
+  width: min(230px, 78vw) !important;
   margin-bottom: 18px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .footer-logo img {
@@ -1009,6 +1018,8 @@ footer.site-footer {
   width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
+  mix-blend-mode: multiply !important;
+  filter: contrast(1.04) saturate(1.06) !important;
 }
 
 .footer-brand p,
@@ -1035,9 +1046,21 @@ footer.site-footer {
   border-left: 1px solid #c8dcf7 !important;
 }
 
+.footer-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 2px !important;
+}
+
+.footer-help {
+  display: block !important;
+}
+
 .footer-menu a,
 .footer-menu button {
-  width: 100% !important;
+  width: min(100%, 280px) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
@@ -1115,7 +1138,7 @@ footer.site-footer {
 .footer-contact-card {
   display: grid !important;
   gap: 6px !important;
-  width: min(100%, 330px) !important;
+  width: min(100%, 370px) !important;
   padding: 16px 18px !important;
   border: 1px solid #c8dcf7 !important;
   border-radius: 18px !important;
@@ -1140,6 +1163,7 @@ footer.site-footer {
   line-height: 1.5 !important;
   text-decoration: none !important;
   font-weight: 700 !important;
+  overflow-wrap: anywhere !important;
 }
 
 .footer-contact-card a:hover {
@@ -1211,7 +1235,11 @@ footer.site-footer {
 
   .footer-panel {
     grid-template-columns: 1fr !important;
-    gap: 24px !important;
+    gap: 22px !important;
+  }
+
+  .footer-logo {
+    width: min(205px, 72vw) !important;
   }
 
   .footer-menu,
@@ -1220,6 +1248,12 @@ footer.site-footer {
     border-left: 0 !important;
     padding-top: 22px !important;
     border-top: 1px solid #c8dcf7 !important;
+  }
+
+  .footer-menu a,
+  .footer-menu button,
+  .footer-contact-card {
+    width: 100% !important;
   }
 
   .footer-bottom {
