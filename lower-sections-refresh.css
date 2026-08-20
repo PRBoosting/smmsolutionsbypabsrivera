@@ -62,3 +62,66 @@
 
 /* Keep the FAQ close to the feedback section instead of leaving an empty page-sized gap. */
 .faq{padding-top:42px!important}
+
+/* Final mobile layout pass: keep every section inside the phone viewport. */
+@media (max-width:760px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .site-header{min-width:0}
+  .site-header nav{max-width:calc(100vw - 32px)}
+
+  .site-announcements{grid-template-columns:1fr!important;margin:0 16px!important;gap:8px!important}
+  .announcement-title{padding:10px 4px!important}.announcement-item{min-height:0!important;padding:12px 14px!important}
+
+  .hero{grid-template-columns:1fr!important;gap:22px!important;padding:38px 20px 28px!important}
+  .hero h1{font-size:clamp(35px,10.5vw,48px)!important;line-height:1.06!important;letter-spacing:-2.2px!important}
+  .hero-text{font-size:15px!important;line-height:1.55!important}
+  .hero-actions{display:grid!important;grid-template-columns:1fr!important;gap:9px!important}
+  .hero-actions .button{justify-content:center!important;width:100%!important}
+  .hero-service-summary{min-width:0!important;width:100%!important}
+  .hero-service-summary a{min-width:0!important}.hero-service-summary strong,.hero-service-summary small{overflow-wrap:anywhere}
+
+  .service-intro{display:block!important;margin:0 20px 16px!important;padding:34px 0 0!important}
+  .service-intro h2{font-size:31px!important;letter-spacing:-1.55px!important}.service-intro>p{margin-top:12px!important;font-size:14px!important;line-height:1.55!important}
+  .service-filters{display:flex!important;overflow-x:auto!important;gap:8px!important;margin:0 20px 16px!important;padding:0 0 4px!important;scrollbar-width:none}
+  .service-filters::-webkit-scrollbar{display:none}.service-filters button{flex:0 0 auto!important;white-space:nowrap!important}
+
+  .service-directory{margin:0 20px 14px!important;padding:16px!important;grid-template-columns:1fr!important;gap:12px!important}
+  .directory-services{grid-template-columns:1fr!important}.directory-service{min-width:0!important}
+
+  .promo-first-grid{grid-template-columns:1fr!important;gap:10px!important;margin:0 20px 24px!important;padding-bottom:0!important}
+  .promo-first-grid .service-card{min-height:0!important;padding:15px 16px!important;border-radius:14px!important}
+  .promo-first-grid .service-card h3{min-height:0!important;font-size:18px!important;line-height:1.18!important}
+  .promo-first-grid .service-card .currency-price{font-size:21px!important}
+  .promo-first-grid .service-card button{padding-top:12px!important}
+  .promo-first-grid .promo-badge{top:13px!important;right:13px!important}
+
+  .website-creation{padding-left:20px!important;padding-right:20px!important}.website-creation-intro{display:block!important}
+  .website-creation-intro h2{font-size:31px!important;letter-spacing:-1.55px!important}.website-creation-actions{margin-top:18px!important}
+  .website-package-list{grid-template-columns:1fr!important}.website-package-list article{min-width:0!important}
+  .website-samples-grid{grid-auto-columns:minmax(260px,82vw)!important}
+
+  .new-features{margin:0 20px!important;grid-template-columns:1fr!important}.new-features-grid{grid-template-columns:1fr!important}
+  .process{margin:28px 20px 0!important;padding:20px!important;border-radius:16px!important}
+  .process h2{font-size:27px!important}.process ol{margin-top:15px!important}.process li{grid-template-columns:38px 1fr!important;gap:10px!important}
+  .process li strong{width:36px!important;height:36px!important;font-size:15px!important}.process li p{font-size:10px!important}
+
+  .trust-feedback-wrap{display:block!important;margin:34px 20px 38px!important}.trust-feedback-wrap .about h2,.trust-feedback-wrap .reviews-heading h2{font-size:27px!important;letter-spacing:-1.4px!important}
+  .trust-feedback-wrap .values{grid-template-columns:repeat(3,1fr)!important;gap:7px!important}.trust-feedback-wrap .values div{padding:10px 5px!important}
+  .trust-feedback-wrap .values b{font-size:16px!important}.trust-feedback-wrap .values div:after{font-size:8px!important}
+  .trust-feedback-wrap .client-reviews{margin-top:30px!important;padding-left:0!important;border-left:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+  .trust-feedback-wrap .reviews-grid{grid-template-columns:1fr!important;gap:11px!important}.trust-feedback-wrap .review-card{min-height:0!important;padding:16px!important}
+  .trust-feedback-wrap blockquote{font-size:12px!important;line-height:1.55!important}
+
+  .faq{display:grid!important;grid-template-columns:1fr!important;gap:17px!important;margin:0 20px!important;padding-top:18px!important}.faq h2{font-size:31px!important;letter-spacing:-1.55px!important}
+  .faq details{padding:15px!important}.faq summary{font-size:13px!important}.faq details p{font-size:12px!important;line-height:1.55!important}
+  .contact{margin-left:20px!important;margin-right:20px!important;padding:28px 20px!important}.contact h2{font-size:30px!important}
+  footer{margin-left:20px!important;margin-right:20px!important;padding:24px 0!important;gap:16px!important;flex-wrap:wrap!important}.footer-links{gap:10px!important}
+}
+
+@media (max-width:420px){
+  .site-header{padding-left:16px!important;padding-right:16px!important}.site-header .brand-logo img{width:120px!important;height:42px!important;max-width:120px!important}
+  .hero{padding-left:16px!important;padding-right:16px!important}.hero h1{font-size:36px!important}
+  .service-intro,.service-filters,.promo-first-grid,.service-directory,.new-features,.process,.trust-feedback-wrap,.faq{margin-left:16px!important;margin-right:16px!important}
+  .website-creation{padding-left:16px!important;padding-right:16px!important}
+  .trust-feedback-wrap .values{grid-template-columns:repeat(3,1fr)!important}.trust-feedback-wrap .values div:after{font-size:7px!important}
+}
