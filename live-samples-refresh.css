@@ -1261,3 +1261,192 @@ footer.site-footer {
     align-items: flex-start !important;
   }
 }
+
+/* Final footer repair — keeps the quote form + footer full-width, clean, and responsive */
+html,
+body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+#quote-form.quote-inquiry {
+  width: min(1120px, calc(100% - 32px)) !important;
+  max-width: 1120px !important;
+  margin: clamp(42px, 6vw, 70px) auto 0 !important;
+  box-sizing: border-box !important;
+}
+
+#quote-form .quote-inquiry-copy,
+#quote-form .quote-form {
+  min-width: 0 !important;
+}
+
+#quote-form input,
+#quote-form select,
+#quote-form textarea,
+#quote-form button {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+footer.site-footer {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: clamp(28px, 4vw, 44px) 0 0 !important;
+  padding: clamp(36px, 4vw, 56px) max(24px, calc((100vw - 1180px) / 2)) 24px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  border-top: 1px solid #c7daf4 !important;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(22, 113, 224, 0.12), transparent 32%),
+    linear-gradient(135deg, #edf6ff 0%, #f8fbff 52%, #eef6ff 100%) !important;
+}
+
+.footer-panel,
+.footer-bottom {
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+.footer-panel {
+  display: grid !important;
+  grid-template-columns: minmax(250px, 0.85fr) minmax(220px, 0.65fr) minmax(360px, 1fr) !important;
+  gap: clamp(30px, 4vw, 58px) !important;
+  align-items: start !important;
+}
+
+.footer-brand,
+.footer-menu,
+.footer-help {
+  min-width: 0 !important;
+}
+
+.footer-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: min(255px, 80vw) !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.footer-logo img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  mix-blend-mode: multiply !important;
+  filter: none !important;
+}
+
+.footer-menu {
+  display: grid !important;
+  gap: 13px !important;
+}
+
+.footer-menu a,
+.footer-menu button,
+.footer-message-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  white-space: normal !important;
+}
+
+.footer-help {
+  display: grid !important;
+  gap: 14px !important;
+}
+
+.footer-contact-card {
+  width: 100% !important;
+  max-width: 430px !important;
+  min-width: 0 !important;
+  padding: 18px !important;
+  box-sizing: border-box !important;
+}
+
+.footer-contact-card a,
+.footer-contact-card strong {
+  display: block !important;
+  max-width: 100% !important;
+}
+
+.footer-contact-card a {
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  hyphens: none !important;
+  line-height: 1.45 !important;
+}
+
+.footer-bottom {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+  margin-top: 34px !important;
+  padding-top: 18px !important;
+  border-top: 1px solid #c7daf4 !important;
+}
+
+@media (max-width: 920px) {
+  footer.site-footer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .footer-panel {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .footer-menu,
+  .footer-help {
+    border-left: 0 !important;
+    padding-left: 0 !important;
+    border-top: 1px solid #c8dcf7 !important;
+    padding-top: 22px !important;
+  }
+
+  .footer-contact-card {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 620px) {
+  #quote-form.quote-inquiry {
+    width: calc(100% - 24px) !important;
+    margin-top: 32px !important;
+    padding: 24px 18px !important;
+  }
+
+  footer.site-footer {
+    margin-top: 30px !important;
+    padding-top: 30px !important;
+  }
+
+  .footer-logo {
+    width: min(220px, 78vw) !important;
+  }
+
+  .footer-bottom {
+    display: block !important;
+  }
+
+  .footer-bottom div {
+    margin-top: 10px !important;
+  }
+}
