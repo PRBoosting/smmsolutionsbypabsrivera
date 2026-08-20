@@ -856,3 +856,55 @@
     justify-content: center !important;
   }
 }
+
+/* Final typography alignment: make Live Samples match the main website section */
+.live-samples-refresh {
+  font-family: "DM Sans", sans-serif !important;
+}
+
+.live-samples-heading h3 {
+  max-width: 620px !important;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-size: clamp(38px, 4.5vw, 58px) !important;
+  font-weight: 800 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -2.6px !important;
+  color: #071f4d !important;
+}
+
+.live-samples-heading h3 strong {
+  color: #1769db !important;
+  font: inherit !important;
+}
+
+.live-samples-heading p:not(.eyebrow),
+.live-samples-note p {
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0 !important;
+  color: #536786 !important;
+}
+
+@media (max-width: 760px) {
+  .live-samples-heading h3 {
+    max-width: 390px !important;
+    font-size: clamp(34px, 10vw, 43px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -1.8px !important;
+  }
+
+  .live-samples-heading p:not(.eyebrow),
+  .live-samples-note p {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .live-samples-heading h3 {
+    max-width: 350px !important;
+    font-size: clamp(32px, 9.4vw, 39px) !important;
+    letter-spacing: -1.6px !important;
+  }
+}
