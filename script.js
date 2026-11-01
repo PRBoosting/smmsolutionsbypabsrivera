@@ -685,26 +685,6 @@ if (resultsShowcase) {
         secondaryHref: 'websites.html',
         note: '',
         mode: 'website'
-      },
-      {
-        platform: 'websites',
-        type: 'website',
-        label: 'ONLINE BOOKING SYSTEM',
-        title: 'Online Inquiry & Booking System',
-        description: 'A responsive online booking system designed to make appointment requests easier for both businesses and their customers.',
-        badge: 'LIVE SYSTEM DEMO',
-        projectType: 'Booking & Inquiry System',
-        projectStatus: 'Live Demo',
-        image: 'assets/images/results/booking-system-showcase.png',
-        alt: 'Customer-facing online booking system demo shown in desktop and mobile layouts',
-        chips: ['Online Booking', 'Service Selection', 'Date & Time Selection', 'Mobile Friendly'],
-        primaryText: 'View Live Demo',
-        primaryHref: 'https://slotwisemvp.netlify.app/katseye-hair-salon',
-        secondaryText: 'View All Web Projects',
-        secondaryHref: 'websites.html',
-        note: '',
-        mode: 'website',
-        external: true
       }
     ]
   };

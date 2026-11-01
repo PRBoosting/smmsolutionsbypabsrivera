@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview | Facebook More Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .fb-more-preview-page .page-shell {
+      padding-bottom: 72px;
+    }
+    .fb-more-options-preview {
+      padding-top: 36px;
+      padding-bottom: 18px;
+    }
+    .fb-more-preview-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+      position: relative;
+      overflow: hidden;
+      padding: 36px;
+      border: 1px solid rgba(221, 232, 246, 0.95);
+      border-radius: 28px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      box-shadow: 0 16px 38px rgba(20, 60, 120, 0.07);
+    }
+    .fb-more-preview-shell::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      top: -126px;
+      left: -140px;
+      border: 1px solid rgba(11, 99, 246, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .fb-more-preview-shell::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      right: 34px;
+      width: 88px;
+      height: 70px;
+      opacity: 0.16;
+      background-image: radial-gradient(#0b63f6 1.2px, transparent 1.2px);
+      background-size: 14px 14px;
+      pointer-events: none;
+    }
+    .fb-more-preview-head {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin-bottom: 28px;
+    }
+    .fb-more-preview-head h2 {
+      margin-bottom: 12px;
+    }
+    .fb-more-preview-head .lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 620px;
+    }
+    .fb-more-preview-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+    .fb-more-preview-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 18px;
+      border: 1px solid rgba(221, 232, 246, 0.95);
+      border-radius: 24px;
+      background: #ffffff;
+      box-shadow: 0 12px 28px rgba(20, 60, 120, 0.07);
+      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+    }
+    .fb-more-preview-image {
+      display: grid;
+      place-items: center;
+      min-height: 220px;
+      margin-bottom: 18px;
+      padding: 10px;
+      border: 1px solid rgba(227, 236, 249, 0.95);
+      border-radius: 20px;
+      background: linear-gradient(180deg, #fcfeff 0%, #f5f9ff 100%);
+    }
+    .fb-more-preview-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .fb-more-preview-copy {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .fb-more-preview-copy h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.22rem;
+    }
+    .fb-more-preview-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .fb-more-preview-meta {
+      margin-top: 12px;
+      color: #0b63f6;
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .fb-more-preview-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 18px;
+      color: #0b63f6;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .fb-more-preview-link i {
+      width: 15px;
+      height: 15px;
+      transition: transform 200ms ease;
+    }
+    .fb-more-preview-cta {
+      padding-top: 18px;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .fb-more-preview-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 34px rgba(20, 60, 120, 0.1);
+        border-color: rgba(11, 99, 246, 0.22);
+      }
+      .fb-more-preview-link:hover i {
+        transform: translateX(4px);
+      }
+    }
+    @media (max-width: 1024px) {
+      .fb-more-preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .fb-more-preview-card:last-child {
+        grid-column: 1 / -1;
+        max-width: min(420px, 100%);
+        justify-self: center;
+      }
+    }
+    @media (max-width: 720px) {
+      .fb-more-preview-shell,
+      .fb-packages-cta {
+        width: min(100% - 32px, 100%);
+      }
+      .fb-more-preview-shell {
+        padding: 24px 20px;
+        border-radius: 24px;
+      }
+      .fb-more-preview-grid {
+        grid-template-columns: 1fr;
+      }
+      .fb-more-preview-card:last-child {
+        grid-column: auto;
+        max-width: none;
+      }
+      .fb-more-preview-image {
+        min-height: 0;
+      }
+    }
+  </style>
+</head>
+<body class="packages-page fb-more-preview-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/smm-solutions-logo.png" alt="SMM Solutions by Pabs Rivera">
+      </a>
+      <div class="nav-wrap">
+        <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+          <i data-lucide="menu"></i>
+        </button>
+        <nav id="primary-nav" class="primary-nav" data-primary-nav>
+          <a href="index.html">Home</a>
+          <div class="nav-item" data-nav-item>
+            <button class="drop-toggle" type="button" data-drop-toggle aria-expanded="false">
+              Services <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="dropdown">
+              <a href="services.html">Services</a>
+              <a href="packages.html">Packages</a>
+              <a href="facebook-packages.html">Facebook Packages</a>
+              <a href="instagram-packages.html">Instagram Packages</a>
+              <a href="tiktok-packages.html">TikTok Packages</a>
+              <a href="other-services.html">Other Services</a>
+            </div>
+          </div>
+          <a href="websites.html">Websites</a>
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="section fb-more-options-preview">
+      <div class="fb-more-preview-shell">
+        <div class="fb-more-preview-head reveal">
+          <p class="eyebrow">MORE OPTIONS</p>
+          <h2>Need Something More Specific?</h2>
+          <p class="lead">Looking for individual Facebook services instead of a complete growth package? Explore our other available options.</p>
+        </div>
+
+        <div class="fb-more-preview-grid">
+          <article class="fb-more-preview-card reveal">
+            <div class="fb-more-preview-image">
+              <img src="assets/images/facebook-packages.png" alt="Facebook boosting promo packages poster showing Global Followers and Unique Video Views rates" loading="lazy" decoding="async">
+            </div>
+            <div class="fb-more-preview-copy">
+              <h3>Global Boosting Rates</h3>
+              <p>Individual Global Followers and Unique Video Views options.</p>
+              <p class="fb-more-preview-meta">Starting from ₱285</p>
+              <a href="javascript:void(0)" class="fb-more-preview-link">View Rates <i data-lucide="arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="fb-more-preview-card reveal">
+            <div class="fb-more-preview-image">
+              <img src="assets/images/facebook-engagements.png" alt="Facebook engagements boosting packages poster showing one-time and monthly options" loading="lazy" decoding="async">
+            </div>
+            <div class="fb-more-preview-copy">
+              <h3>Engagement Packages</h3>
+              <p>Reactions, shares, video views, comments, and monthly engagement options.</p>
+              <a href="javascript:void(0)" class="fb-more-preview-link">View Engagement Packages <i data-lucide="arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="fb-more-preview-card reveal">
+            <div class="fb-more-preview-image">
+              <img src="assets/images/facebook-ph.png" alt="Facebook boosting promo for PH-based audience poster showing Pinoy followers and reacts" loading="lazy" decoding="async">
+            </div>
+            <div class="fb-more-preview-copy">
+              <h3>PH-Based Audience</h3>
+              <p>Pinoy followers and reactions for businesses targeting a local audience.</p>
+              <a href="javascript:void(0)" class="fb-more-preview-link">View PH Rates <i data-lucide="arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fb-packages-cta-section fb-more-preview-cta">
+      <div class="container fb-packages-cta reveal">
+        <div>
+          <h2>Not Sure Which Package Fits You?</h2>
+          <p>Tell us your Facebook growth goals and we'll help you choose the right option.</p>
+        </div>
+        <div class="fb-packages-cta-actions">
+          <a href="contact.html" class="btn btn-primary">Get a Recommendation <i data-lucide="arrow-right"></i></a>
+          <a href="contact.html" class="btn btn-secondary">Message Us <i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container services-footer-grid">
+      <div class="services-footer-brand">
+        <a class="footer-brand" href="index.html">
+          <img src="assets/images/smm-solutions-logo.png" alt="SMM Solutions by Pabs Rivera">
+        </a>
+        <p>Helping businesses grow through social media, websites, and practical online solutions.</p>
+      </div>
+      <nav class="services-footer-links" aria-label="Quick Links">
+        <a href="services.html">Services</a>
+        <a href="packages.html">Packages</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="services-footer-meta">
+        <span class="services-footer-badge">DTI &amp; BIR Registered</span>
+        <p>Professional digital solutions for growing businesses.</p>
+      </div>
+    </div>
+    <div class="container services-footer-bottom">
+      <p>© <span data-year></span> SMM Solutions by Pabs Rivera. All rights reserved.</p>
+      <p>Helping Businesses Build a Stronger Online Presence.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
