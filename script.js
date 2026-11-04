@@ -1255,3 +1255,102 @@ if (projectFilterButtons.length) {
 
   setProjectFilter('all');
 }
+
+// Connect the static package catalog to the live Boosting Storefront without
+// duplicating its cart or checkout. Links only preselect a package for review.
+const boostingStorefront = 'https://start.smmsolutionsbypabsrivera.com/boosting';
+const boostingPackageIds = {
+  'FB Growth Starter - Pinoy': 'boost-fb-starter-pinoy',
+  'FB Growth Starter - Global': 'boost-fb-starter-global',
+  'FB Growth Boost - Global': 'boost-fb-boost-global',
+  'FB Growth Boost - Pinoy': 'boost-fb-boost-pinoy',
+  'FB Growth Pro - Global': 'boost-fb-pro-global',
+  'FB Growth Pro - PH': 'boost-fb-pro-ph',
+  'FB Growth Max - Global': 'boost-fb-max-global',
+  'IG Growth Starter - Global': 'boost-ig-starter-global',
+  'IG Growth Boost - Global': 'boost-ig-boost-global',
+  'IG Growth Pro - Global': 'boost-ig-pro-global',
+  'IG Growth Max - Global': 'boost-ig-max-global',
+  'TikTok Growth Starter - Global': 'boost-tt-starter-global',
+  'TikTok Growth Boost - Global': 'boost-tt-boost-global',
+  'TikTok Growth Pro - Global': 'boost-tt-pro-global',
+  'TikTok Growth Max - Global': 'boost-tt-max-global',
+  'Facebook Foreign Followers': 'boost-fb-foreign-followers',
+  'Facebook Pinoy Followers': 'boost-fb-pinoy-followers',
+  'Facebook Foreign Reacts': 'boost-fb-foreign-reacts',
+  'Facebook Pinoy Reacts': 'boost-fb-pinoy-reacts',
+  'Facebook Reel / Video Views': 'boost-fb-reel-video-views',
+  'Facebook Live Viewers': 'boost-fb-live-viewers',
+  'Facebook PH-Based Comments': 'boost-fb-ph-comments',
+  'Facebook Foreign Shares': 'boost-fb-foreign-shares',
+  'Facebook Pinoy Shares': 'boost-fb-pinoy-shares',
+  'Instagram Foreign Followers': 'boost-ig-foreign-followers',
+  'Instagram Foreign Hearts / Likes': 'boost-ig-foreign-likes',
+  'Instagram Reel Views': 'boost-ig-reel-views',
+  'Instagram Video Views': 'boost-ig-video-views',
+  'Instagram Story Views / Likes': 'boost-ig-story-views-likes',
+  'Instagram Real Post Saves': 'boost-ig-real-post-saves',
+  'TikTok Foreign Followers': 'boost-tt-foreign-followers',
+  'TikTok Foreign Likes': 'boost-tt-foreign-likes',
+  'TikTok Video Views': 'boost-tt-video-views',
+  'TikTok Video Shares': 'boost-tt-video-shares',
+  'TikTok Video Saves': 'boost-tt-video-saves'
+};
+
+const createBoostingLink = (label, packageId) => {
+  const link = document.createElement('a');
+  link.className = 'storefront-order-link';
+  link.href = `${boostingStorefront}?productId=${encodeURIComponent(packageId)}`;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.innerHTML = `${label} <i data-lucide="arrow-up-right"></i>`;
+  return link;
+};
+
+if (window.location.pathname.endsWith('/index.html') || window.location.pathname.endsWith('/')) {
+  const packagePreviewCta = document.querySelector('#panel-facebook .package-preview-cta');
+  if (packagePreviewCta && !document.querySelector('[data-home-boosting-cta]')) {
+    const link = createBoostingLink('Shop Boosting Packages', 'boost-fb-foreign-followers');
+    link.dataset.homeBoostingCta = 'true';
+    packagePreviewCta.insertAdjacentElement('afterend', link);
+  }
+}
+
+const primaryNav = document.querySelector('#primary-nav');
+if (primaryNav && !primaryNav.querySelector('[data-order-boosting]')) {
+  const orderLink = document.createElement('a');
+  orderLink.href = boostingStorefront;
+  orderLink.target = '_blank';
+  orderLink.rel = 'noopener noreferrer';
+  orderLink.dataset.orderBoosting = 'true';
+  orderLink.className = 'nav-cta nav-boosting-cta';
+  orderLink.textContent = 'Order Boosting';
+  const contactLink = primaryNav.querySelector('a[href="contact.html"]');
+  primaryNav.insertBefore(orderLink, contactLink || null);
+}
+
+document.querySelectorAll('.fb-poster-cta').forEach((button) => {
+  const title = button.dataset.title || '';
+  const packageId = boostingPackageIds[title];
+  if (!packageId || button.parentElement?.querySelector('.storefront-order-link')) return;
+  button.insertAdjacentElement('afterend', createBoostingLink('Order Now', packageId));
+});
+
+document.querySelectorAll('tr').forEach((row) => {
+  const label = row.querySelector('td, th')?.textContent?.replace(/\s+/g, ' ').trim() || '';
+  const match = Object.keys(boostingPackageIds).find((name) => label.toLowerCase() === name.toLowerCase());
+  if (!match || row.querySelector('.storefront-order-link')) return;
+  const cell = row.querySelector('td:last-child') || row;
+  cell.appendChild(createBoostingLink('Order Now', boostingPackageIds[match]));
+});
+
+if (/\/other-services\.html$/.test(window.location.pathname) && !document.querySelector('[data-boosting-services-cta]')) {
+  const anchor = document.querySelector('.page-hero .btn-primary, main .btn-primary');
+  if (anchor) {
+    const link = createBoostingLink('Shop Boosting Packages', 'boost-fb-foreign-followers');
+    link.dataset.boostingServicesCta = 'true';
+    anchor.insertAdjacentElement('afterend', link);
+  }
+}
+
+if (window.lucide?.createIcons) window.lucide.createIcons();
