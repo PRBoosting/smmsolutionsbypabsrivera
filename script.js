@@ -1329,20 +1329,30 @@ if (primaryNav && !primaryNav.querySelector('[data-order-boosting]')) {
   primaryNav.insertBefore(orderLink, contactLink || null);
 }
 
-document.querySelectorAll('.fb-poster-cta').forEach((button) => {
-  const title = button.dataset.title || '';
-  const packageId = boostingPackageIds[title];
-  if (!packageId || button.parentElement?.querySelector('.storefront-order-link')) return;
-  button.insertAdjacentElement('afterend', createBoostingLink('Order Now', packageId));
-});
+const addStorefrontLinks = () => {
+  document.querySelectorAll('.fb-poster-cta').forEach((button) => {
+    const title = button.dataset.title || '';
+    const packageId = boostingPackageIds[title];
+    if (!packageId || button.parentElement?.querySelector('.storefront-order-link')) return;
+    button.insertAdjacentElement('afterend', createBoostingLink('Order Now', packageId));
+  });
 
-document.querySelectorAll('tr').forEach((row) => {
-  const label = row.querySelector('td, th')?.textContent?.replace(/\s+/g, ' ').trim() || '';
-  const match = Object.keys(boostingPackageIds).find((name) => label.toLowerCase() === name.toLowerCase());
-  if (!match || row.querySelector('.storefront-order-link')) return;
-  const cell = row.querySelector('td:last-child') || row;
-  cell.appendChild(createBoostingLink('Order Now', boostingPackageIds[match]));
-});
+  document.querySelectorAll('tr').forEach((row) => {
+    const label = row.querySelector('td, th')?.textContent?.replace(/\s+/g, ' ').trim() || '';
+    const match = Object.keys(boostingPackageIds).find((name) => label.toLowerCase() === name.toLowerCase());
+    if (!match || row.querySelector('.storefront-order-link')) return;
+    const cell = row.querySelector('td:last-child') || row;
+    cell.appendChild(createBoostingLink('Order Now', boostingPackageIds[match]));
+  });
+};
+
+addStorefrontLinks();
+const minimumRatesRoot = document.querySelector('[data-minimum-rates-app]');
+if (minimumRatesRoot) {
+  const observer = new MutationObserver(addStorefrontLinks);
+  observer.observe(minimumRatesRoot, { childList: true, subtree: true });
+  window.setTimeout(() => observer.disconnect(), 10000);
+}
 
 if (/\/other-services\.html$/.test(window.location.pathname) && !document.querySelector('[data-boosting-services-cta]')) {
   const anchor = document.querySelector('.page-hero .btn-primary, main .btn-primary');
